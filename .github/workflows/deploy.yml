@@ -26,7 +26,7 @@ jobs:
                     password: ${{ secrets.W1_PASSWORD }}
 
                     script: |
-                        cd ~/home/galipzpg/public_html/PruebaThree
+                        cd /home/galipzpg/public_html/PruebaThree
                         git pull
                         cp .env.local .env.backup
                         cp .env.Website1 .env.local

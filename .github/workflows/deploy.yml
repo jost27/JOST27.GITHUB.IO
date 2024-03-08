@@ -13,7 +13,7 @@ jobs:
     - name: 📂 Sync files
       uses: SamKirkland/FTP-Deploy-Action@v4.3.5
       with:
-        server: ftp.samkirkland.com
+        server: ftp.galileilearning.com
         username: ${{ secrets.W1_USERNAME }}
         password: ${{ secrets.W1_PASSWORD }}
         script:

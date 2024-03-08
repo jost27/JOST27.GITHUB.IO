@@ -3,21 +3,23 @@ on:
         branches: [ "main" ]
 name: 🚀 Deploy website on push
 jobs:
-  web-deploy:
-    name: 🎉 Deploy
+  deploy:
     runs-on: ubuntu-latest
     steps:
-    - name: 🚚 Get latest code
-      uses: actions/checkout@v4
-    
-    - name: 📂 Sync files
-      uses: SamKirkland/FTP-Deploy-Action@v4.3.5
-      with:
-        server: ftp.galileilearning.com
-        username: ${{ secrets.W1_USERNAME }}
-        password: ${{ secrets.W1_PASSWORD }}
-        script:
-             echo "Deployment successful!"
+      - name: Deploy to cPanel
+        id: deploy
+        uses: pinkasey/cpanel-deploy-action@v1.0.0
+        with:
+          hostname: ${{ secrets.W1_HOST }}
+          repository_root: 'public_html/PruebaThree'
+          branch: main
+          cpanel_token: ${{ secrets.CPANEL_TOKEN }}
+      - name: echo deploy-duration
+        run: echo "Deployment took ${{ steps.deploy.outputs.duration }} milliseconds"
+
+
+
+
  
 
 

@@ -12,6 +12,8 @@ jobs:
         with:
           hostname: ${{ secrets.W1_HOST }}
           repository_root: 'public_html/PruebaThree'
+          port: '2083' # Optional. Don't change it unless you know what you're doing
+          username: ${{ secrets.W1_USERNAME }} # Your cPanel username
           branch: main
           cpanel_token: ${{ secrets.CPANEL_TOKEN }}
       - name: echo deploy-duration

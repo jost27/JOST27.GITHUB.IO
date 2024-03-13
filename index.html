@@ -3,50 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Imported models</title>
+    <title>Model2</title>
     
-    
-  <script type="module" crossorigin src="./assets/index-15348410.js"></script>
-  <link rel="stylesheet" href="./assets/index-985efa86.css">
+  <script type="module" crossorigin src="./assets/index-24098d09.js"></script>
+  <link rel="stylesheet" href="./assets/index-60c247ed.css">
 </head>
 <body>
-    <div class="MenuButton" id="MenuButton"><a class="btnMenu"><span class="icon-menu"></span></a></div>
-    <div class="principalMenu" id="principalMenu">
-        <div class="internal-container">
-            <div class="Title">Menu Principal</div>
-            <ul class="container-buttons">
-                <li><button class="btnStar" id="btnStart">Iniciar</button></li>
-                <li><button class="btnInfo">Informacion</button></li>
-                <li><button class="btnClose" id="btnClose">Cerrar</button></li>
-            </ul>
-        </div>
-    </div>
     <canvas class="webgl"></canvas>
-    <script type="text/javascript">
-        document.addEventListener("DOMContentLoaded", function(){
-            let StartGame = document.getElementById("btnStart");
-            let PrincipalMenu = document.getElementById("principalMenu");
-
-            StartGame.addEventListener("click", function() {
-                PrincipalMenu.style.display = "none"
-            });
-
-            let CloseWindow = document.getElementById("btnClose");
-
-            CloseWindow.addEventListener("click", function(){
-                if (confirm("¿Estás seguro de que quieres cerrar esta pestaña?")) {
-                    window.close(); // Cierra la pestaña actual
-                }
-            });
-
-            let ActivePrincipalMenu = document.getElementById("MenuButton");
-
-            ActivePrincipalMenu.addEventListener("click", function(){
-                PrincipalMenu.style.display = "block"
-            });
-
-        });
-     </script>
     
 </body>
 </html>

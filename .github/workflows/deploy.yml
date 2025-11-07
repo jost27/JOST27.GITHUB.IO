@@ -1,26 +1,36 @@
-on: 
-     push:
-        branches: [ "main" ]
-name: 🚀 Deploy website on push
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
 jobs:
   deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
-      - name: Deploy to cPanel
-        id: deploy
-        uses: pinkasey/cpanel-deploy-action@v1.0.0
+      - uses: actions/checkout@v4
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
         with:
-          hostname: ${{ secrets.W1_HOST }}
-          repository_root: 'public_html/PruebaThree'
-          port: '2083' # Optional. Don't change it unless you know what you're doing
-          username: ${{ secrets.CPANEL_USERNAME }} # Your cPanel username
-          branch: main
-          cpanel_token: ${{ secrets.CPANEL_TOKEN }}
-      - name: echo deploy-duration
-        run: echo "Deployment took ${{ steps.deploy.outputs.duration }} milliseconds"
+          path: ./   # carpeta donde están tus HTML/CSS/JS finales
 
-
-
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
 
  
 

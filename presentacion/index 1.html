@@ -1,0 +1,1631 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Press Start — Desbloqueando el mundo profesional de los videojuegos</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Press+Start+2P&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+    :root {
+      --neon-cyan: #00f0ff;
+      --neon-magenta: #ff00e5;
+      --neon-green: #39ff14;
+      --neon-yellow: #ffe600;
+      --neon-orange: #ff6a00;
+      --neon-red: #ff003c;
+      --bg-dark: #0a0a0f;
+      --bg-card: rgba(10, 10, 20, 0.92);
+      --bg-card-hover: rgba(20, 20, 40, 0.95);
+      --text-primary: #e8e8f0;
+      --text-secondary: #9090b0;
+      --text-dim: #606080;
+      --border-glow: rgba(0, 240, 255, 0.15);
+      --gradient-main: linear-gradient(135deg, #0a0a1a 0%, #0f0f2a 50%, #1a0a2e 100%);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html, body {
+      width: 100%; height: 100%;
+      overflow: hidden;
+      font-family: 'Inter', sans-serif;
+      background: var(--bg-dark);
+      color: var(--text-primary);
+    }
+
+    /* ── GRID BACKGROUND ── */
+    body::before {
+      content: '';
+      position: fixed; inset: 0;
+      background:
+        linear-gradient(rgba(0,240,255,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,240,255,0.03) 1px, transparent 1px);
+      background-size: 60px 60px;
+      pointer-events: none; z-index: 0;
+    }
+
+    /* ── FLOATING PARTICLES ── */
+    .particles { position: fixed; inset: 0; pointer-events: none; z-index: 0; overflow: hidden; }
+    .particle {
+      position: absolute; width: 3px; height: 3px;
+      background: var(--neon-cyan); border-radius: 50%; opacity: 0.4;
+      animation: float-particle linear infinite;
+    }
+    @keyframes float-particle {
+      0% { transform: translateY(100vh) scale(0); opacity: 0; }
+      10% { opacity: 0.6; } 90% { opacity: 0.6; }
+      100% { transform: translateY(-10vh) scale(1); opacity: 0; }
+    }
+
+    /* ── GAME CANVAS (background per slide) ── */
+    .game-canvas {
+      position: absolute; inset: 0;
+      width: 100%; height: 100%;
+      opacity: 0.35;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* ── SCANLINES OVERLAY ── */
+    .scanlines {
+      position: fixed; inset: 0; pointer-events: none; z-index: 999;
+      background: repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 2px,
+        rgba(0, 0, 0, 0.08) 2px,
+        rgba(0, 0, 0, 0.08) 4px
+      );
+    }
+
+    /* ── CRT VIGNETTE ── */
+    .crt-vignette {
+      position: fixed; inset: 0; pointer-events: none; z-index: 998;
+      background: radial-gradient(ellipse at center, transparent 60%, rgba(0,0,0,0.5) 100%);
+    }
+
+    /* ── PRESENTATION CONTAINER ── */
+    #presentation { position: relative; width: 100%; height: 100%; z-index: 1; }
+
+    /* ── SLIDE ── */
+    .slide {
+      position: absolute; inset: 0;
+      display: flex; flex-direction: column; justify-content: center; align-items: center;
+      padding: 40px 60px;
+      opacity: 0; transform: scale(0.95) translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+      pointer-events: none;
+      background: var(--gradient-main);
+      overflow-y: auto;
+    }
+    .slide.active { opacity: 1; transform: scale(1) translateY(0); pointer-events: all; }
+    .slide.exit-left { opacity: 0; transform: scale(0.9) translateX(-80px); }
+    .slide.exit-right { opacity: 0; transform: scale(0.9) translateX(80px); }
+    .slide-inner {
+      max-width: 1100px; width: 100%; position: relative; z-index: 2;
+      background: rgba(10, 10, 20, 0.55);
+      border-radius: 16px;
+      padding: 30px;
+      backdrop-filter: blur(4px);
+    }
+
+    /* ── SECTION BADGE ── */
+    .section-badge {
+      display: inline-block; font-family: 'JetBrains Mono', monospace;
+      font-size: 0.7rem; font-weight: 600; letter-spacing: 3px; text-transform: uppercase;
+      padding: 5px 16px; border-radius: 20px; margin-bottom: 16px; border: 1px solid;
+    }
+    .badge-apertura { color: var(--neon-cyan); border-color: var(--neon-cyan); background: rgba(0,240,255,0.08); }
+    .badge-contexto { color: var(--neon-green); border-color: var(--neon-green); background: rgba(57,255,20,0.08); }
+    .badge-industria { color: var(--neon-magenta); border-color: var(--neon-magenta); background: rgba(255,0,229,0.08); }
+    .badge-ia { color: var(--neon-yellow); border-color: var(--neon-yellow); background: rgba(255,230,0,0.08); }
+    .badge-frontera { color: var(--neon-orange); border-color: var(--neon-orange); background: rgba(255,106,0,0.08); }
+    .badge-trabajo { color: #7b68ee; border-color: #7b68ee; background: rgba(123,104,238,0.08); }
+    .badge-talento { color: #ff69b4; border-color: #ff69b4; background: rgba(255,105,180,0.08); }
+    .badge-minigame { color: var(--neon-green); border-color: var(--neon-green); background: rgba(57,255,20,0.08); }
+    .badge-aplicaciones { color: var(--neon-cyan); border-color: var(--neon-cyan); background: rgba(0,240,255,0.08); }
+    .badge-cierre { color: var(--neon-magenta); border-color: var(--neon-magenta); background: rgba(255,0,229,0.08); }
+    .badge-apendice { color: var(--text-secondary); border-color: var(--text-secondary); background: rgba(144,144,176,0.08); }
+
+    /* ── TYPOGRAPHY ── */
+    .slide-title {
+      font-family: 'Orbitron', sans-serif; font-size: 2.6rem; font-weight: 900; line-height: 1.2;
+      margin-bottom: 12px;
+      background: linear-gradient(135deg, var(--neon-cyan), var(--neon-magenta));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+    }
+    .slide-title.title-large { font-size: 3.4rem; }
+    .slide-subtitle {
+      font-size: 1.15rem; color: var(--text-secondary); margin-bottom: 30px;
+      max-width: 800px; line-height: 1.6;
+    }
+
+    /* ── 8-BIT RETRO LABEL ── */
+    .retro-label {
+      font-family: 'Press Start 2P', monospace;
+      font-size: 0.55rem;
+      color: var(--neon-green);
+      opacity: 0.3;
+      position: absolute;
+      bottom: 8px; right: 12px;
+      letter-spacing: 2px;
+      z-index: 1;
+    }
+
+    /* ── CARDS GRID ── */
+    .cards-grid { display: grid; gap: 16px; margin-top: 20px; }
+    .cards-grid.cols-2 { grid-template-columns: repeat(2, 1fr); }
+    .cards-grid.cols-3 { grid-template-columns: repeat(3, 1fr); }
+    .cards-grid.cols-4 { grid-template-columns: repeat(4, 1fr); }
+
+    .card {
+      background: var(--bg-card); border: 1px solid var(--border-glow); border-radius: 12px;
+      padding: 24px; transition: all 0.3s ease; backdrop-filter: blur(10px);
+    }
+    .card:hover {
+      background: var(--bg-card-hover); transform: translateY(-3px);
+      border-color: rgba(0,240,255,0.35); box-shadow: 0 8px 30px rgba(0,240,255,0.1);
+    }
+    .card h3 { font-family: 'Orbitron', sans-serif; font-size: 0.95rem; font-weight: 700; margin-bottom: 10px; color: var(--neon-cyan); }
+    .card p, .card li { font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6; }
+    .card ul { list-style: none; padding: 0; }
+    .card ul li::before { content: '▸ '; color: var(--neon-cyan); font-weight: bold; }
+
+    /* ── STAT BOXES ── */
+    .stat-row { display: flex; gap: 20px; margin: 20px 0; flex-wrap: wrap; }
+    .stat-box {
+      background: var(--bg-card); border: 1px solid var(--border-glow); border-radius: 12px;
+      padding: 20px 28px; text-align: center; flex: 1; min-width: 140px; transition: all 0.3s ease;
+    }
+    .stat-box:hover { border-color: var(--neon-cyan); box-shadow: 0 0 20px rgba(0,240,255,0.15); }
+    .stat-number { font-family: 'Orbitron', sans-serif; font-size: 2rem; font-weight: 900; color: var(--neon-cyan); display: block; }
+    .stat-label { font-size: 0.78rem; color: var(--text-secondary); margin-top: 6px; text-transform: uppercase; letter-spacing: 1px; }
+
+    /* ── TAGS ── */
+    .tag { display: inline-block; font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; font-weight: 600; padding: 3px 10px; border-radius: 10px; margin: 3px 4px 3px 0; letter-spacing: 1px; }
+    .tag-ventaja { background: rgba(57,255,20,0.15); color: var(--neon-green); border: 1px solid rgba(57,255,20,0.3); }
+    .tag-riesgo { background: rgba(255,0,60,0.15); color: var(--neon-red); border: 1px solid rgba(255,0,60,0.3); }
+    .tag-decision { background: rgba(255,230,0,0.15); color: var(--neon-yellow); border: 1px solid rgba(255,230,0,0.3); }
+
+    /* ── PIPELINE ── */
+    .pipeline { display: flex; align-items: center; gap: 0; margin: 30px 0; flex-wrap: wrap; justify-content: center; }
+    .pipeline-step {
+      background: var(--bg-card); border: 1px solid var(--border-glow); padding: 16px 28px; border-radius: 8px;
+      font-family: 'Orbitron', sans-serif; font-size: 0.8rem; font-weight: 600; color: var(--neon-cyan); transition: all 0.3s; cursor: default;
+    }
+    .pipeline-step:hover { background: rgba(0,240,255,0.1); transform: scale(1.05); box-shadow: 0 0 20px rgba(0,240,255,0.2); }
+    .pipeline-arrow { font-size: 1.4rem; color: var(--neon-magenta); padding: 0 8px; }
+
+    /* ── STACK LAYERS ── */
+    .stack-layers { display: flex; flex-direction: column; gap: 8px; margin: 20px 0; }
+    .stack-layer {
+      background: var(--bg-card); border: 1px solid var(--border-glow); border-radius: 8px;
+      padding: 16px 24px; display: flex; align-items: center; gap: 16px; transition: all 0.3s;
+    }
+    .stack-layer:hover { border-color: var(--neon-cyan); transform: translateX(8px); }
+    .stack-layer .layer-num { font-family: 'Orbitron', sans-serif; font-size: 1.4rem; font-weight: 900; color: var(--neon-magenta); min-width: 36px; }
+    .stack-layer .layer-name { font-weight: 600; color: var(--neon-cyan); min-width: 180px; }
+    .stack-layer .layer-desc { color: var(--text-secondary); font-size: 0.85rem; }
+
+    /* ── MINI-GAME DECISIONS ── */
+    .decision-container { text-align: center; margin-top: 20px; }
+    .decision-btn {
+      display: block; width: 100%; max-width: 600px; margin: 12px auto; padding: 20px 30px;
+      background: var(--bg-card); border: 2px solid var(--border-glow); border-radius: 12px;
+      color: var(--text-primary); font-family: 'Inter', sans-serif; font-size: 1rem; font-weight: 500;
+      cursor: pointer; transition: all 0.3s ease; text-align: left;
+    }
+    .decision-btn:hover {
+      border-color: var(--neon-green); background: rgba(57,255,20,0.08);
+      transform: translateX(8px); box-shadow: 0 0 25px rgba(57,255,20,0.15);
+    }
+    .decision-btn .option-letter { font-family: 'Orbitron', sans-serif; font-weight: 900; color: var(--neon-green); margin-right: 12px; font-size: 1.1rem; }
+
+    /* ── RESULT CARD ── */
+    .result-card { background: var(--bg-card); border-radius: 16px; padding: 30px; margin-top: 20px; border: 2px solid; }
+    .result-card.result-strong { border-color: var(--neon-green); box-shadow: 0 0 30px rgba(57,255,20,0.1); }
+    .result-card.result-weak { border-color: var(--neon-orange); box-shadow: 0 0 30px rgba(255,106,0,0.1); }
+    .result-card.result-neutral { border-color: var(--neon-cyan); box-shadow: 0 0 30px rgba(0,240,255,0.1); }
+    .result-card h3 { font-family: 'Orbitron', sans-serif; font-size: 1.2rem; margin-bottom: 12px; }
+    .result-card p, .result-card li { color: var(--text-secondary); line-height: 1.7; font-size: 0.9rem; }
+
+    /* ── SALARY BARS ── */
+    .salary-bar { display: flex; align-items: center; gap: 16px; margin: 12px 0; }
+    .salary-bar .bar-label { min-width: 180px; font-size: 0.85rem; color: var(--text-secondary); }
+    .salary-bar .bar-track { flex: 1; height: 28px; background: rgba(255,255,255,0.05); border-radius: 6px; overflow: hidden; }
+    .salary-bar .bar-fill {
+      height: 100%; border-radius: 6px; transition: width 1.2s ease;
+      display: flex; align-items: center; padding-left: 12px;
+      font-family: 'Orbitron', sans-serif; font-size: 0.75rem; font-weight: 700; color: #fff;
+    }
+    .bar-fill.bar-col { background: linear-gradient(90deg, var(--neon-magenta), #ff69b4); width: 25%; }
+    .bar-fill.bar-remote1 { background: linear-gradient(90deg, var(--neon-cyan), #00bfff); width: 68%; }
+    .bar-fill.bar-remote2 { background: linear-gradient(90deg, var(--neon-green), #7bff4a); width: 85%; }
+
+    /* ── MATRIX TABLE ── */
+    .matrix-table { width: 100%; border-collapse: collapse; margin-top: 16px; font-size: 0.82rem; }
+    .matrix-table th, .matrix-table td { padding: 12px 16px; border: 1px solid var(--border-glow); text-align: left; }
+    .matrix-table th { background: rgba(0,240,255,0.08); font-family: 'Orbitron', sans-serif; font-size: 0.72rem; font-weight: 700; color: var(--neon-cyan); letter-spacing: 1px; }
+    .matrix-table td { color: var(--text-secondary); background: var(--bg-card); }
+    .matrix-table tr:hover td { background: var(--bg-card-hover); }
+
+    /* ── PROGRESS BAR ── */
+    #progress-bar { position: fixed; bottom: 0; left: 0; height: 3px; background: linear-gradient(90deg, var(--neon-cyan), var(--neon-magenta)); transition: width 0.4s ease; z-index: 1000; }
+    #slide-counter { position: fixed; bottom: 16px; right: 24px; font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; color: var(--text-dim); z-index: 1000; letter-spacing: 2px; }
+
+    /* ── NAV BUTTONS ── */
+    .nav-btn {
+      position: fixed; top: 50%; transform: translateY(-50%);
+      background: rgba(15,15,25,0.6); border: 1px solid var(--border-glow); color: var(--text-secondary);
+      width: 48px; height: 48px; border-radius: 50%; cursor: pointer; font-size: 1.2rem; z-index: 1000;
+      transition: all 0.3s; backdrop-filter: blur(8px); display: flex; align-items: center; justify-content: center;
+    }
+    .nav-btn:hover { border-color: var(--neon-cyan); color: var(--neon-cyan); box-shadow: 0 0 20px rgba(0,240,255,0.2); }
+    #btn-prev { left: 20px; }
+    #btn-next { right: 20px; }
+
+    /* ── FADE ANIMATIONS ── */
+    .fade-in-up { opacity: 0; transform: translateY(30px); transition: opacity 0.5s ease, transform 0.5s ease; }
+    .slide.active .fade-in-up { opacity: 1; transform: translateY(0); }
+    .slide.active .fade-in-up:nth-child(2) { transition-delay: 0.1s; }
+    .slide.active .fade-in-up:nth-child(3) { transition-delay: 0.2s; }
+    .slide.active .fade-in-up:nth-child(4) { transition-delay: 0.3s; }
+    .slide.active .fade-in-up:nth-child(5) { transition-delay: 0.4s; }
+    .slide.active .fade-in-up:nth-child(6) { transition-delay: 0.5s; }
+
+    /* ── GLITCH ── */
+    .glitch { position: relative; }
+    .glitch::before, .glitch::after {
+      content: attr(data-text); position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+      background: var(--gradient-main);
+    }
+    .glitch::before {
+      animation: glitch-1 2s infinite linear alternate-reverse;
+      clip-path: polygon(0 0, 100% 0, 100% 35%, 0 35%);
+      -webkit-text-fill-color: transparent;
+      background: linear-gradient(135deg, var(--neon-cyan), var(--neon-magenta));
+      -webkit-background-clip: text; background-clip: text;
+    }
+    .glitch::after {
+      animation: glitch-2 3s infinite linear alternate-reverse;
+      clip-path: polygon(0 65%, 100% 65%, 100% 100%, 0 100%);
+      -webkit-text-fill-color: transparent;
+      background: linear-gradient(135deg, var(--neon-cyan), var(--neon-magenta));
+      -webkit-background-clip: text; background-clip: text;
+    }
+    @keyframes glitch-1 { 0%,95%{transform:translateX(0)} 96%{transform:translateX(-4px)} 97%{transform:translateX(4px)} 98%{transform:translateX(-2px)} 99%{transform:translateX(2px)} 100%{transform:translateX(0)} }
+    @keyframes glitch-2 { 0%,95%{transform:translateX(0)} 96%{transform:translateX(3px)} 97%{transform:translateX(-3px)} 98%{transform:translateX(1px)} 99%{transform:translateX(-1px)} 100%{transform:translateX(0)} }
+
+    /* ── COVER ── */
+    .cover-center {
+      text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center;
+      min-height: 80vh; position: relative; z-index: 2;
+      background: rgba(10, 10, 20, 0.5);
+      border-radius: 20px;
+      padding: 40px;
+      backdrop-filter: blur(3px);
+    }
+    .cover-center .slide-title { font-size: 3.8rem; margin-bottom: 20px; }
+    .cover-tagline { font-size: 1.1rem; color: var(--text-secondary); max-width: 650px; line-height: 1.8; margin-bottom: 30px; }
+    .cover-topics { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; }
+    .cover-topic {
+      font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; padding: 6px 16px;
+      border: 1px solid var(--border-glow); border-radius: 20px; color: var(--text-secondary);
+      letter-spacing: 1px; transition: all 0.3s;
+    }
+    .cover-topic:hover { border-color: var(--neon-cyan); color: var(--neon-cyan); }
+    .press-start-blink {
+      font-family: 'Press Start 2P', monospace; font-size: 0.75rem; color: var(--neon-green);
+      margin-top: 40px; animation: blink 1.2s ease-in-out infinite; letter-spacing: 4px;
+    }
+    @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.2} }
+
+    /* ── TREE ── */
+    .tree-container { display: flex; flex-direction: column; align-items: center; gap: 12px; margin-top: 20px; }
+    .tree-level { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+    .tree-node { background: var(--bg-card); border: 1px solid var(--border-glow); border-radius: 8px; padding: 12px 20px; font-size: 0.8rem; color: var(--text-secondary); text-align: center; min-width: 140px; transition: all 0.3s; }
+    .tree-node:hover { border-color: var(--neon-green); color: var(--neon-green); }
+    .tree-node.node-highlight { border-color: var(--neon-green); background: rgba(57,255,20,0.08); color: var(--neon-green); }
+    .tree-connector { color: var(--neon-magenta); font-size: 1.2rem; }
+
+    .hl-cyan { color: var(--neon-cyan); }
+    .hl-green { color: var(--neon-green); }
+    .hl-magenta { color: var(--neon-magenta); }
+    .hl-yellow { color: var(--neon-yellow); }
+    .hl-orange { color: var(--neon-orange); }
+
+    .quote-block {
+      border-left: 3px solid var(--neon-cyan); padding: 16px 24px; margin: 20px 0;
+      background: rgba(0,240,255,0.04); border-radius: 0 8px 8px 0;
+      font-style: italic; color: var(--text-secondary); font-size: 0.95rem; line-height: 1.7;
+    }
+    .styled-list { list-style: none; padding: 0; margin: 16px 0; }
+    .styled-list li { padding: 8px 0; font-size: 0.9rem; color: var(--text-secondary); line-height: 1.5; border-bottom: 1px solid rgba(255,255,255,0.03); }
+    .styled-list li::before { content: '▹ '; color: var(--neon-cyan); font-weight: bold; margin-right: 4px; }
+    .checklist { list-style: none; padding: 0; margin: 16px 0; }
+    .checklist li { padding: 10px 0; font-size: 0.88rem; color: var(--text-secondary); display: flex; align-items: flex-start; gap: 10px; }
+    .checklist li .check-icon { color: var(--neon-green); font-size: 1rem; flex-shrink: 0; }
+    .source-list { columns: 2; gap: 30px; list-style: none; padding: 0; margin-top: 16px; }
+    .source-list li { padding: 8px 0; font-size: 0.8rem; color: var(--text-dim); break-inside: avoid; border-bottom: 1px solid rgba(255,255,255,0.03); }
+    .source-list li strong { color: var(--text-secondary); }
+
+    .key-hint {
+      position: fixed; bottom: 16px; left: 50%; transform: translateX(-50%);
+      font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; color: var(--text-dim); z-index: 1000; letter-spacing: 1px;
+    }
+    .key-hint kbd { background: rgba(255,255,255,0.06); padding: 2px 8px; border-radius: 4px; border: 1px solid rgba(255,255,255,0.1); margin: 0 2px; }
+
+    @media (max-width: 900px) {
+      .slide { padding: 24px 28px; }
+      .slide-title { font-size: 1.8rem; }
+      .slide-title.title-large { font-size: 2.2rem; }
+      .cover-center .slide-title { font-size: 2.4rem; }
+      .cards-grid.cols-2, .cards-grid.cols-3, .cards-grid.cols-4 { grid-template-columns: 1fr; }
+      .stat-row { flex-direction: column; }
+      .pipeline { flex-direction: column; }
+      .pipeline-arrow { transform: rotate(90deg); }
+      .source-list { columns: 1; }
+    }
+
+.games-banner {
+  width: 100%;
+  max-width: 900px;
+  height: auto;
+  border-radius: 10px;
+  opacity: 0.95;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+  filter: brightness(0.9) contrast(1.05);
+}
+
+.games-banner:hover {
+  transform: scale(1.02);
+  filter: brightness(1);
+}
+
+.contact-link {
+  color: #00eaff;
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+.contact-link:hover {
+  color: #66f7ff;
+  text-shadow: 0 0 6px rgba(0, 234, 255, 0.6);
+}
+
+  </style>
+</head>
+<body>
+  <div class="particles" id="particles"></div>
+  <div class="scanlines"></div>
+  <div class="crt-vignette"></div>
+  <div id="progress-bar"></div>
+  <div id="slide-counter">01 / 29</div>
+  <button class="nav-btn" id="btn-prev" onclick="prevSlide()" title="Anterior">&#9664;</button>
+  <button class="nav-btn" id="btn-next" onclick="nextSlide()" title="Siguiente">&#9654;</button>
+  <div class="key-hint"><kbd>&larr;</kbd> <kbd>&rarr;</kbd> o <kbd>Space</kbd> para navegar</div>
+
+  <div id="presentation">
+
+    <!-- ══════ SLIDE 1: COVER — MATRIX RAIN + SNAKE ══════ -->
+    <div class="slide active" data-slide="1" data-game="matrix">
+      <canvas class="game-canvas" id="game-1"></canvas>
+      <div class="cover-center">
+        <div class="fade-in-up"><span class="section-badge badge-apertura">APERTURA</span></div>
+        <h1 class="slide-title title-large glitch fade-in-up" data-text="Press Start">Press Start</h1>
+        <p class="cover-tagline fade-in-up">Desbloqueando el mundo profesional de los videojuegos</p>
+        <div class="cover-topics fade-in-up">
+          <span class="cover-topic">ESTUDIOS</span>
+          <span class="cover-topic">TECNOLOG&Iacute;A</span>
+          <span class="cover-topic">IA</span>
+          <span class="cover-topic">TALENTO</span>
+          <span class="cover-topic">RUTA PR&Aacute;CTICA</span>
+        </div>
+        <div class="press-start-blink fade-in-up">&#9656; PRESS START &#9666;</div>
+      </div>
+      <span class="retro-label">MATRIX RAIN</span>
+    </div>
+
+    <!-- ══════ SLIDE 2: AGENDA — TETRIS ══════ -->
+    <div class="slide" data-slide="2" data-game="tetris">
+      <canvas class="game-canvas" id="game-2"></canvas>
+      <div class="slide-inner">
+        <span class="section-badge badge-apertura fade-in-up">APERTURA</span>
+        <h2 class="slide-title fade-in-up">Ruta de la charla</h2>
+        <p class="slide-subtitle fade-in-up">45 minutos &middot; 6 segmentos &middot; 4 takeaways clave</p>
+        <div class="cards-grid cols-3 fade-in-up">
+          <div class="card"><h3>01 &middot; Contexto</h3><p>&iquest;Qu&eacute; hay detr&aacute;s de un videojuego?</p><p style="color:var(--text-dim);font-size:0.75rem;margin-top:8px;">5 min</p></div>
+          <div class="card"><h3>02 &middot; Industria + IA</h3><p>Mercado global, presi&oacute;n operativa y avances reales de IA</p><p style="color:var(--text-dim);font-size:0.75rem;margin-top:8px;">8 min</p></div>
+          <div class="card"><h3>03 &middot; C&oacute;mo se trabaja</h3><p>Organizaci&oacute;n de estudio y stack real</p><p style="color:var(--text-dim);font-size:0.75rem;margin-top:8px;">10 min</p></div>
+          <div class="card"><h3>04 &middot; Perfiles + Ingl&eacute;s</h3><p>Puertas de entrada, habilidades y portafolio</p><p style="color:var(--text-dim);font-size:0.75rem;margin-top:8px;">8 min</p></div>
+          <div class="card"><h3>05 &middot; Mini Juego</h3><p>90 d&iacute;as para ser m&aacute;s empleable &mdash; Bandersnatch edition</p><p style="color:var(--text-dim);font-size:0.75rem;margin-top:8px;">6 min</p></div>
+          <div class="card"><h3>06 &middot; Serious Games + Q&A</h3><p>Casos globales, Colombia aplicada y preguntas</p><p style="color:var(--text-dim);font-size:0.75rem;margin-top:8px;">8 min</p></div>
+        </div>
+      </div>
+      <span class="retro-label">TETRIS</span>
+    </div>
+
+    <!-- ══════ SLIDE 3: PIPELINE — SNAKE ══════ -->
+    <div class="slide" data-slide="3" data-game="snake">
+      <canvas class="game-canvas" id="game-3"></canvas>
+      <div class="slide-inner">
+        <span class="section-badge badge-contexto fade-in-up">CONTEXTO</span>
+        <h2 class="slide-title fade-in-up">&iquest;Qu&eacute; hay detr&aacute;s de un videojuego?</h2>
+        <p class="slide-subtitle fade-in-up">Un juego es software con contenido, negocio, operaci&oacute;n y experiencia humana corriendo simult&aacute;neamente.</p>
+        <div class="pipeline fade-in-up">
+          <div class="pipeline-step">&#128161; Idea</div><span class="pipeline-arrow">&rarr;</span>
+          <div class="pipeline-step">&#128203; Preproducci&oacute;n</div><span class="pipeline-arrow">&rarr;</span>
+          <div class="pipeline-step">&#9881; Producci&oacute;n</div><span class="pipeline-arrow">&rarr;</span>
+          <div class="pipeline-step">&#129514; QA + Launch</div><span class="pipeline-arrow">&rarr;</span>
+          <div class="pipeline-step">&#128260; Live Ops</div>
+        </div>
+        <div class="quote-block fade-in-up">"Un videojuego no es solo c&oacute;digo o arte &mdash; es la orquestaci&oacute;n de m&uacute;ltiples disciplinas trabajando en sincron&iacute;a hacia una experiencia interactiva."</div>
+      </div>
+      <span class="retro-label">SNAKE</span>
+    </div>
+
+    <!-- ══════ SLIDE 4: MARKET — SPACE INVADERS ══════ -->
+    <div class="slide" data-slide="4" data-game="invaders">
+      <canvas class="game-canvas" id="game-4"></canvas>
+      <div class="slide-inner">
+        <span class="section-badge badge-industria fade-in-up">INDUSTRIA</span>
+        <h2 class="slide-title fade-in-up">Radiograf&iacute;a del mercado global &mdash; 2025</h2>
+        <div class="stat-row fade-in-up">
+          <div class="stat-box"><span class="stat-number" data-count="188.8">$0</span><span class="stat-label">Billones USD revenue</span></div>
+          <div class="stat-box"><span class="stat-number" data-count="3.6">0</span><span class="stat-label">Billones de jugadores</span></div>
+          <div class="stat-box"><span class="stat-number">55%</span><span class="stat-label">Market share m&oacute;vil</span></div>
+          <div class="stat-box"><span class="stat-number">+5.5%</span><span class="stat-label">Crecimiento consola</span></div>
+        </div>
+        <div class="cards-grid cols-3 fade-in-up">
+          <div class="card"><h3>&#128241; Mobile</h3><p><strong style="color:var(--neon-cyan);">$103B</strong> &mdash; El gigante silencioso</p></div>
+          <div class="card"><h3>&#127918; Console</h3><p><strong style="color:var(--neon-magenta);">$45.9B</strong> &mdash; Crecimiento s&oacute;lido</p></div>
+          <div class="card"><h3>&#128421; PC</h3><p><strong style="color:var(--neon-green);">$39.9B</strong> &mdash; Ecosistema maduro</p></div>
+        </div>
+        <p class="fade-in-up" style="margin-top:16px;font-size:0.85rem;color:var(--text-dim);">Hay valor m&aacute;s all&aacute; del AAA: co-dev, tools, services, simulation, QA...</p>
+      </div>
+      <span class="retro-label">SPACE INVADERS</span>
+    </div>
+
+    <!-- ══════ SLIDE 5: PRESSURE — PONG ══════ -->
+    <div class="slide" data-slide="5" data-game="pong">
+      <canvas class="game-canvas" id="game-5"></canvas>
+      <div class="slide-inner">
+        <span class="section-badge badge-industria fade-in-up">INDUSTRIA</span>
+        <h2 class="slide-title fade-in-up">Crecimiento con presi&oacute;n operativa</h2>
+        <div class="stat-row fade-in-up">
+          <div class="stat-box"><span class="stat-number">36%</span><span class="stat-label">Usan IA generativa (GDC 2026)</span></div>
+          <div class="stat-box"><span class="stat-number" style="color:var(--neon-red);">52%</span><span class="stat-label">Creen que IA tiene impacto negativo</span></div>
+          <div class="stat-box"><span class="stat-number">42%</span><span class="stat-label">Usan Unreal</span></div>
+          <div class="stat-box"><span class="stat-number">30%</span><span class="stat-label">Usan Unity</span></div>
+        </div>
+        <div class="cards-grid cols-2 fade-in-up">
+          <div class="card"><h3>&#9888; Realidad Junior</h3><p>Posiciones junior son m&aacute;s escasas. Se valoran m&aacute;s: arquitectura, rendimiento, debugging.</p></div>
+          <div class="card"><h3>&#127758; Oportunidad Latam</h3><p><strong class="hl-green">55%</strong> de los estudios ven oportunidades en Latinoam&eacute;rica.</p></div>
+        </div>
+      </div>
+      <span class="retro-label">PONG</span>
+    </div>
+
+    <!-- ══════ SLIDE 6: AI — ASTEROIDS ══════ -->
+    <div class="slide" data-slide="6" data-game="asteroids">
+      <canvas class="game-canvas" id="game-6"></canvas>
+      <div class="slide-inner">
+        <span class="section-badge badge-ia fade-in-up">IA</span>
+        <h2 class="slide-title fade-in-up">IA: avances reales en el pipeline</h2>
+        <p class="slide-subtitle fade-in-up">Lo que ya est&aacute; tocando producci&oacute;n, no hype de Twitter.</p>
+        <div class="cards-grid cols-3 fade-in-up">
+          <div class="card"><h3>&#129302; Copilots</h3><p>Microsoft Muse, Google Gemini &mdash; asistencia en c&oacute;digo y dise&ntilde;o.</p><div style="margin-top:12px;"><span class="tag tag-ventaja">VENTAJA</span></div></div>
+          <div class="card"><h3>&#127912; Content &amp; Tools</h3><p>Ubisoft La Forge, NVIDIA ACE &mdash; generaci&oacute;n de assets y NPCs.</p><div style="margin-top:12px;"><span class="tag tag-ventaja">VENTAJA</span><span class="tag tag-riesgo">RIESGO</span></div></div>
+          <div class="card"><h3>&#129504; AI-Native</h3><p>Unity 6.1 &mdash; experiencias construidas sobre IA desde el dise&ntilde;o.</p><div style="margin-top:12px;"><span class="tag tag-decision">DECISI&Oacute;N</span></div></div>
+        </div>
+      </div>
+      <span class="retro-label">ASTEROIDS</span>
+    </div>
+
+    <!-- ══════ SLIDE 7: FRONTIER — BREAKOUT ══════ -->
+    <div class="slide" data-slide="7" data-game="breakout">
+      <canvas class="game-canvas" id="game-7"></canvas>
+      <div class="slide-inner">
+        <span class="section-badge badge-frontera fade-in-up">FRONTERA</span>
+        <h2 class="slide-title fade-in-up">La frontera ya sali&oacute; del entretenimiento</h2>
+        <div class="cards-grid cols-2 fade-in-up">
+          <div class="card"><h3>&#129516; Bio-computing</h3><p>Cortical Labs CL1 &mdash; chips biol&oacute;gicos que aprenden a jugar Pong.</p></div>
+          <div class="card"><h3>&#129302; Agentes &amp; Mundos Reactivos</h3><p>NVIDIA ACE, Muse &mdash; NPCs con personalidad emergente.</p></div>
+          <div class="card"><h3>&#128218; EdTech</h3><p>Minecraft Education, CloudLabs &mdash; gamificaci&oacute;n aplicada a STEM.</p></div>
+          <div class="card"><h3>&#127973; HealthTech</h3><p>EndeavorRx (aprobado FDA), Sea Hero Quest &mdash; juegos terap&eacute;uticos.</p></div>
+        </div>
+      </div>
+      <span class="retro-label">BREAKOUT</span>
+    </div>
+
+    <!-- ══════ SLIDE 8: STUDIO ORG — PACMAN ══════ -->
+    <div class="slide" data-slide="8" data-game="pacman">
+      <canvas class="game-canvas" id="game-8"></canvas>
+      <div class="slide-inner">
+        <span class="section-badge badge-trabajo fade-in-up">TRABAJO</span>
+        <h2 class="slide-title fade-in-up">As&iacute; se organiza un estudio</h2>
+        <p class="slide-subtitle fade-in-up">"Te contratan para reducir incertidumbre en alguna parte del sistema."</p>
+        <table class="matrix-table fade-in-up">
+          <thead><tr><th>Fase</th><th>Production</th><th>Design / Art</th><th>Engineering</th><th>QA / Data / Pub</th></tr></thead>
+          <tbody>
+            <tr><td><strong class="hl-cyan">Discover</strong></td><td>Alcance, roadmap</td><td>Concept art, prototipos</td><td>Arquitectura, spikes</td><td>Benchmarks, tooling</td></tr>
+            <tr><td><strong class="hl-magenta">Build</strong></td><td>Sprints, milestones</td><td>Assets, levels, UX</td><td>Gameplay, engine, backend</td><td>Test plans, analytics</td></tr>
+            <tr><td><strong class="hl-green">Operate</strong></td><td>Live ops, KPIs</td><td>Seasonal content</td><td>Stability, performance, scale</td><td>Monitoring, A/B tests</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <span class="retro-label">PAC-MAN</span>
+    </div>
+
+    <!-- ══════ SLIDE 9: STACK — SNAKE ══════ -->
+    <div class="slide" data-slide="9" data-game="snake2">
+      <canvas class="game-canvas" id="game-9"></canvas>
+      <div class="slide-inner">
+        <span class="section-badge badge-trabajo fade-in-up">TRABAJO</span>
+        <h2 class="slide-title fade-in-up">Stack real: del gameplay al backend</h2>
+        <div class="stack-layers fade-in-up">
+          <div class="stack-layer"><span class="layer-num">5</span><span class="layer-name">Experiencia</span><span class="layer-desc">UX, feedback loops, juiciness, player feel</span></div>
+          <div class="stack-layer"><span class="layer-num">4</span><span class="layer-name">Gameplay / Sistemas</span><span class="layer-desc">Mec&aacute;nicas, AI, econom&iacute;a, progression</span></div>
+          <div class="stack-layer"><span class="layer-num">3</span><span class="layer-name">Engine / Runtime</span><span class="layer-desc">Rendering, physics, audio, networking</span></div>
+          <div class="stack-layer"><span class="layer-num">2</span><span class="layer-name">Servicios</span><span class="layer-desc">Auth, matchmaking, leaderboards, analytics</span></div>
+          <div class="stack-layer"><span class="layer-num">1</span><span class="layer-name">Infra / Pipeline</span><span class="layer-desc">CI/CD, asset pipeline, build systems, devops</span></div>
+        </div>
+        <div class="cards-grid cols-2 fade-in-up" style="margin-top:16px;">
+          <div class="card" style="border-color:rgba(255,0,60,0.3);"><h3 style="color:var(--neon-red);">&#10060; Donde fallan los juniors</h3><p>Solo aprenden el engine sin entender las capas que lo rodean.</p></div>
+          <div class="card" style="border-color:rgba(57,255,20,0.3);"><h3 style="color:var(--neon-green);">&#9989; Donde crece el valor</h3><p>Conectar gameplay, tools, performance y contenido con pensamiento de producto.</p></div>
+        </div>
+      </div>
+      <span class="retro-label">SNAKE II</span>
+    </div>
+
+    <!-- ══════ SLIDE 10: ENTRY POINTS — INVADERS ══════ -->
+    <div class="slide" data-slide="10" data-game="invaders2">
+      <canvas class="game-canvas" id="game-10"></canvas>
+      <div class="slide-inner">
+        <span class="section-badge badge-talento fade-in-up">TALENTO</span>
+        <h2 class="slide-title fade-in-up">Puertas de entrada reales</h2>
+        <p class="slide-subtitle fade-in-up">No necesitas ser senior para entrar. Necesitas ser estrat&eacute;gico.</p>
+        <div class="cards-grid cols-3 fade-in-up">
+          <div class="card"><h3>&#129514; QA / Release</h3><p>Testing manual y automatizado, gesti&oacute;n de builds, release pipelines.</p></div>
+          <div class="card"><h3>&#127918; Gameplay / Tools</h3><p>Programaci&oacute;n de mec&aacute;nicas, scripting, herramientas de editor.</p></div>
+          <div class="card"><h3>&#127912; Tech Art / Integraci&oacute;n</h3><p>Shaders, rigging t&eacute;cnico, optimizaci&oacute;n visual, pipeline art.</p></div>
+          <div class="card"><h3>&#128295; Backend / Data / Live Ops</h3><p>APIs, analytics, servicios en la nube, monetizaci&oacute;n.</p></div>
+          <div class="card"><h3>&#128203; Producci&oacute;n / Comunidad</h3><p>Gesti&oacute;n de proyectos, community management, soporte.</p></div>
+          <div class="card"><h3>&#128737; Soporte T&eacute;cnico</h3><p>Diagn&oacute;stico, documentaci&oacute;n t&eacute;cnica, escalamiento.</p></div>
+        </div>
+      </div>
+      <span class="retro-label">SPACE INVADERS II</span>
+    </div>
+
+    <!-- ══════ SLIDE 11: SKILLS 1 — PONG ══════ -->
+    <div class="slide" data-slide="11" data-game="pong2">
+      <canvas class="game-canvas" id="game-11"></canvas>
+      <div class="slide-inner">
+        <span class="section-badge badge-talento fade-in-up">TALENTO</span>
+        <h2 class="slide-title fade-in-up">Perfiles y habilidades base</h2>
+        <div class="cards-grid cols-2 fade-in-up">
+          <div class="card"><h3>&#127918; Gameplay Programmer</h3><ul><li>C++ / C# / Blueprints</li><li>Mec&aacute;nicas de juego, FSMs, AI b&aacute;sico</li><li>Matem&aacute;ticas 3D, f&iacute;sica</li></ul></div>
+          <div class="card"><h3>&#128295; Tools / Engine</h3><ul><li>Editor scripting, pipeline automation</li><li>Profiling, memory management</li><li>Build systems, CI integration</li></ul></div>
+          <div class="card"><h3>&#127912; Tech Artist</h3><ul><li>Shaders (HLSL/GLSL), VFX</li><li>Rigging, skinning, LOD pipelines</li><li>Optimizaci&oacute;n de assets</li></ul></div>
+          <div class="card"><h3>&#129514; QA / LiveOps / Data</h3><ul><li>Test automation, CI/CD</li><li>Analytics pipelines, A/B testing</li><li>Monitoring, incident response</li></ul></div>
+          <div class="card"><h3>&#128208; Design / Technical Design</h3><ul><li>Systems design, economy balancing</li><li>Scripting visual (Blueprints, Bolt)</li><li>Prototyping r&aacute;pido</li></ul></div>
+          <div class="card"><h3>&#128203; Production / Product / Community</h3><ul><li>Scrum/Kanban, roadmapping</li><li>Stakeholder management</li><li>Player feedback loops</li></ul></div>
+        </div>
+        <p class="fade-in-up" style="margin-top:12px;font-size:0.8rem;color:var(--text-dim);">En estudios peque&ntilde;os los perfiles se mezclan &mdash; la versatilidad es un superpoder.</p>
+      </div>
+      <span class="retro-label">PONG II</span>
+    </div>
+
+    <!-- ══════ SLIDE 12: SKILLS 2 — ASTEROIDS ══════ -->
+    <div class="slide" data-slide="12" data-game="asteroids2">
+      <canvas class="game-canvas" id="game-12"></canvas>
+      <div class="slide-inner">
+        <span class="section-badge badge-talento fade-in-up">TALENTO</span>
+        <h2 class="slide-title fade-in-up">Habilidades que abren puertas</h2>
+        <div class="cards-grid cols-2 fade-in-up">
+          <div class="card"><h3>&#128279; Integraci&oacute;n de Arte</h3><p>Saber llevar un asset desde DCC (Maya, Blender) hasta el engine con calidad y performance.</p></div>
+          <div class="card"><h3>&#128200; Performance</h3><p>Profiling, CPU/GPU bottlenecks, memory budgets, draw call optimization.</p></div>
+          <div class="card"><h3>&#127919; Definici&oacute;n de Problemas</h3><p>Entender QU&Eacute; resolver antes de C&Oacute;MO. Priorizar por impacto, no por complejidad.</p></div>
+          <div class="card"><h3>&#128172; Comunicaci&oacute;n</h3><p>Documentar decisiones, explicar tradeoffs, dar y recibir feedback t&eacute;cnico.</p></div>
+        </div>
+        <div class="quote-block fade-in-up">"Entre dos personas igual de talentosas, avanza m&aacute;s la que puede diagnosticar r&aacute;pido, proponer opciones, medir impacto y dejar evidencia usable."</div>
+      </div>
+      <span class="retro-label">ASTEROIDS II</span>
+    </div>
+
+    <!-- ══════ SLIDE 13: PORTFOLIO — BREAKOUT ══════ -->
+    <div class="slide" data-slide="13" data-game="breakout2">
+      <canvas class="game-canvas" id="game-13"></canvas>
+      <div class="slide-inner">
+        <span class="section-badge badge-talento fade-in-up">TALENTO</span>
+        <h2 class="slide-title fade-in-up">Portafolio que s&iacute; abre entrevistas</h2>
+        <div class="cards-grid cols-2 fade-in-up">
+          <div class="card"><h3>&#128230; Debe incluir</h3><ul class="checklist">
+            <li><span class="check-icon">&check;</span> Build jugable o video de 60-90s</li>
+            <li><span class="check-icon">&check;</span> Tu rol exacto en el proyecto</li>
+            <li><span class="check-icon">&check;</span> Capturas de profiling / debugging</li>
+            <li><span class="check-icon">&check;</span> Postmortem honesto</li>
+            <li><span class="check-icon">&check;</span> C&oacute;digo legible y docs</li>
+            <li><span class="check-icon">&check;</span> Tradeoffs documentados</li>
+          </ul></div>
+          <div class="card"><h3>&#128640; 3 proyectos sugeridos</h3><ul class="styled-list">
+            <li><strong class="hl-cyan">Vertical Slice</strong> &mdash; Muestra que puedes cerrar un loop completo.</li>
+            <li><strong class="hl-magenta">Tool / Plugin</strong> &mdash; Demuestra pensamiento sist&eacute;mico.</li>
+            <li><strong class="hl-green">Serious Game</strong> &mdash; Aplica gameplay a problemas reales.</li>
+          </ul></div>
+        </div>
+      </div>
+      <span class="retro-label">BREAKOUT II</span>
+    </div>
+
+    <!-- ══════ SLIDE 14: ENGLISH — TETRIS ══════ -->
+    <div class="slide" data-slide="14" data-game="tetris2">
+      <canvas class="game-canvas" id="game-14"></canvas>
+      <div class="slide-inner">
+        <span class="section-badge badge-talento fade-in-up">TALENTO</span>
+        <h2 class="slide-title fade-in-up">El ingl&eacute;s multiplica mercado y salario</h2>
+        <p class="slide-subtitle fade-in-up">La diferencia entre mercado local y remoto es masiva.</p>
+        <div class="fade-in-up">
+          <div class="salary-bar"><span class="bar-label">&#127464;&#127476; Colombia promedio</span><div class="bar-track"><div class="bar-fill bar-col">COP 36M/a&ntilde;o</div></div></div>
+          <div class="salary-bar"><span class="bar-label">&#127760; Remoto (Bad Robot Games)</span><div class="bar-track"><div class="bar-fill bar-remote1">USD 95k-140k</div></div></div>
+          <div class="salary-bar"><span class="bar-label">&#127760; Remoto (ProbablyMonsters)</span><div class="bar-track"><div class="bar-fill bar-remote2">USD 100k-150k</div></div></div>
+        </div>
+        <div class="quote-block fade-in-up" style="margin-top:24px;">El ingl&eacute;s no es un &ldquo;nice to have&rdquo; &mdash; es el multiplicador que abre acceso al mercado remoto de videojuegos.</div>
+      </div>
+      <span class="retro-label">TETRIS II</span>
+    </div>
+
+    <!-- ══════ SLIDE 15: MINI GAME INTRO — MATRIX ══════ -->
+    <div class="slide" data-slide="15" data-game="matrix2">
+      <canvas class="game-canvas" id="game-15"></canvas>
+      <div class="slide-inner" style="text-align:center;">
+        <span class="section-badge badge-minigame fade-in-up">MINI JUEGO</span>
+        <h2 class="slide-title fade-in-up">90 d&iacute;as para volverte m&aacute;s empleable</h2>
+        <p class="slide-subtitle fade-in-up" style="margin:0 auto 20px;">Ejercicio interactivo estilo <strong class="hl-green">Bandersnatch</strong>.<br>Escenario: eres un dev con 3 meses para construir una pieza de portafolio antes de aplicar a posiciones junior/associate.</p>
+        <div class="press-start-blink fade-in-up" style="margin-top:30px;">&#9656; AVANZA PARA COMENZAR &#9666;</div>
+      </div>
+      <span class="retro-label">MATRIX</span>
+    </div>
+
+    <!-- ══════ SLIDE 16: DECISION 1 — SNAKE ══════ -->
+    <div class="slide" data-slide="16" data-game="snake3">
+      <canvas class="game-canvas" id="game-16"></canvas>
+      <div class="slide-inner">
+        <span class="section-badge badge-minigame fade-in-up">MINI JUEGO &middot; DECISI&Oacute;N 1</span>
+        <h2 class="slide-title fade-in-up">&iquest;Qu&eacute; construyes primero?</h2>
+        <p class="slide-subtitle fade-in-up">Tienes 90 d&iacute;as. Elige tu camino.</p>
+        <div class="decision-container fade-in-up">
+          <button class="decision-btn" onclick="showPath('tutorial')"><span class="option-letter">A</span> 3 tutoriales de YouTube replicados</button>
+          <button class="decision-btn" onclick="showPath('vertical')"><span class="option-letter">B</span> Vertical slice de un juego original</button>
+          <button class="decision-btn" onclick="showPath('tooling')"><span class="option-letter">C</span> Tool / Plugin para Unity o Unreal</button>
+        </div>
+      </div>
+      <span class="retro-label">SNAKE III</span>
+    </div>
+
+    <!-- ══════ SLIDE 17: PATH TUTORIAL — PONG ══════ -->
+    <div class="slide" data-slide="17" data-game="pong3">
+      <canvas class="game-canvas" id="game-17"></canvas>
+      <div class="slide-inner">
+        <span class="section-badge badge-minigame fade-in-up">CAMINO A &middot; TUTORIALS</span>
+        <h2 class="slide-title fade-in-up">Camino: Tutoriales</h2>
+        <div class="result-card result-neutral fade-in-up">
+          <h3 class="hl-cyan">Evaluaci&oacute;n</h3>
+          <div class="stat-row" style="margin:16px 0;">
+            <div class="stat-box"><span class="stat-number" style="font-size:1.2rem;">ALTA</span><span class="stat-label">Velocidad de aprendizaje</span></div>
+            <div class="stat-box"><span class="stat-number" style="font-size:1.2rem;color:var(--neon-yellow);">MEDIA</span><span class="stat-label">Demo de ejecuci&oacute;n</span></div>
+            <div class="stat-box"><span class="stat-number" style="font-size:1.2rem;color:var(--neon-red);">BAJA</span><span class="stat-label">Originalidad</span></div>
+          </div>
+          <p>Bueno como <strong>fase cero</strong> para aprender, pero <strong>no como pieza final de portafolio</strong>. Los recruiters quieren ver decisiones propias.</p>
+        </div>
+        <p class="fade-in-up" style="margin-top:16px;color:var(--text-dim);font-size:0.85rem;text-align:center;">Vuelve atr&aacute;s para elegir otro camino, o avanza.</p>
+      </div>
+      <span class="retro-label">PONG III</span>
+    </div>
+
+    <!-- ══════ SLIDE 18: PATH VERTICAL — INVADERS ══════ -->
+    <div class="slide" data-slide="18" data-game="invaders3">
+      <canvas class="game-canvas" id="game-18"></canvas>
+      <div class="slide-inner">
+        <span class="section-badge badge-minigame fade-in-up">CAMINO B &middot; VERTICAL SLICE</span>
+        <h2 class="slide-title fade-in-up">Camino: Vertical Slice</h2>
+        <div class="result-card result-strong fade-in-up">
+          <h3 class="hl-green">Evaluaci&oacute;n</h3>
+          <div class="stat-row" style="margin:16px 0;">
+            <div class="stat-box"><span class="stat-number" style="font-size:1.2rem;color:var(--neon-green);">ALTA</span><span class="stat-label">Se&ntilde;al de ownership</span></div>
+            <div class="stat-box"><span class="stat-number" style="font-size:1.2rem;color:var(--neon-green);">ALTA</span><span class="stat-label">Capacidad de delivery</span></div>
+          </div>
+          <p>Demuestra que puedes <strong>priorizar, recortar scope y cerrar un loop</strong>. Es lo que un estudio necesita ver.</p>
+        </div>
+      </div>
+      <span class="retro-label">SPACE INVADERS III</span>
+    </div>
+
+    <!-- ══════ SLIDE 19: PATH TOOLING — BREAKOUT ══════ -->
+    <div class="slide" data-slide="19" data-game="breakout3">
+      <canvas class="game-canvas" id="game-19"></canvas>
+      <div class="slide-inner">
+        <span class="section-badge badge-minigame fade-in-up">CAMINO C &middot; TOOL/PLUGIN</span>
+        <h2 class="slide-title fade-in-up">Camino: Tool / Plugin</h2>
+        <div class="result-card result-strong fade-in-up">
+          <h3 class="hl-green">Evaluaci&oacute;n</h3>
+          <div class="stat-row" style="margin:16px 0;">
+            <div class="stat-box"><span class="stat-number" style="font-size:1.2rem;color:var(--neon-green);">ALTA</span><span class="stat-label">Pensamiento sist&eacute;mico</span></div>
+            <div class="stat-box"><span class="stat-number" style="font-size:1.2rem;color:var(--neon-green);">ALTA</span><span class="stat-label">Relevancia de pipeline</span></div>
+          </div>
+          <p>Fuerte para <strong>arquitectura, editor scripting y workflows de datos</strong>. Los estudios valoran a quien mejora el proceso.</p>
+        </div>
+      </div>
+      <span class="retro-label">BREAKOUT III</span>
+    </div>
+
+    <!-- ══════ SLIDE 20: DECISION 2 — PACMAN ══════ -->
+    <div class="slide" data-slide="20" data-game="pacman2">
+      <canvas class="game-canvas" id="game-20"></canvas>
+      <div class="slide-inner">
+        <span class="section-badge badge-minigame fade-in-up">MINI JUEGO &middot; DECISI&Oacute;N 2</span>
+        <h2 class="slide-title fade-in-up">&iquest;C&oacute;mo lo presentas?</h2>
+        <p class="slide-subtitle fade-in-up">Ya construiste tu proyecto. Ahora, &iquest;c&oacute;mo lo muestras al mundo?</p>
+        <div class="decision-container fade-in-up">
+          <button class="decision-btn" onclick="showOutcome('weak')"><span class="option-letter">A</span> Trailer + screenshots &uacute;nicamente</button>
+          <button class="decision-btn" onclick="showOutcome('strong')"><span class="option-letter">B</span> Build + repo + postmortem + profiling</button>
+        </div>
+      </div>
+      <span class="retro-label">PAC-MAN II</span>
+    </div>
+
+    <!-- ══════ SLIDE 21: OUTCOME WEAK — ASTEROIDS ══════ -->
+    <div class="slide" data-slide="21" data-game="asteroids3">
+      <canvas class="game-canvas" id="game-21"></canvas>
+      <div class="slide-inner">
+        <span class="section-badge badge-minigame fade-in-up">RESULTADO &middot; D&Eacute;BIL</span>
+        <h2 class="slide-title fade-in-up">Resultado: Solo visual</h2>
+        <div class="result-card result-weak fade-in-up">
+          <h3 style="color:var(--neon-orange);">&#9888; Se ve bien pero...</h3>
+          <p>Se ve bonito pero <strong>no reduce riesgo de contrataci&oacute;n</strong>.</p>
+          <ul class="styled-list" style="margin-top:12px;">
+            <li>No hay evidencia de debugging</li>
+            <li>No hay iteraci&oacute;n visible</li>
+            <li>No hay tradeoffs documentados</li>
+            <li>El recruiter no puede evaluar tu proceso</li>
+          </ul>
+        </div>
+      </div>
+      <span class="retro-label">ASTEROIDS III</span>
+    </div>
+
+    <!-- ══════ SLIDE 22: OUTCOME STRONG — TETRIS ══════ -->
+    <div class="slide" data-slide="22" data-game="tetris3">
+      <canvas class="game-canvas" id="game-22"></canvas>
+      <div class="slide-inner">
+        <span class="section-badge badge-minigame fade-in-up">RESULTADO &middot; FUERTE</span>
+        <h2 class="slide-title fade-in-up">Resultado: Evidencia completa</h2>
+        <div class="result-card result-strong fade-in-up">
+          <h3 style="color:var(--neon-green);">&#9989; Portafolio que contrata</h3>
+          <ul class="checklist">
+            <li><span class="check-icon">&check;</span> <strong>Ownership visible</strong> &mdash; Tu rol exacto y decisiones documentadas</li>
+            <li><span class="check-icon">&check;</span> <strong>Criterio t&eacute;cnico defendible</strong> &mdash; Tradeoffs explicados con contexto</li>
+            <li><span class="check-icon">&check;</span> <strong>Debugging / performance traces</strong> &mdash; Evidencia de problemas resueltos</li>
+            <li><span class="check-icon">&check;</span> <strong>M&aacute;s f&aacute;cil de colocar</strong> &mdash; El recruiter puede mapear tus skills</li>
+          </ul>
+        </div>
+      </div>
+      <span class="retro-label">TETRIS III</span>
+    </div>
+
+    <!-- ══════ SLIDE 23: ALL PATHS — MATRIX ══════ -->
+    <div class="slide" data-slide="23" data-game="matrix3">
+      <canvas class="game-canvas" id="game-23"></canvas>
+      <div class="slide-inner">
+        <span class="section-badge badge-minigame fade-in-up">MINI JUEGO &middot; CIERRE</span>
+        <h2 class="slide-title fade-in-up">Todos los caminos &mdash; la lecci&oacute;n central</h2>
+        <div class="tree-container fade-in-up">
+          <div class="tree-level"><div class="tree-node node-highlight">&iquest;Qu&eacute; construyes?</div></div>
+          <div class="tree-connector">&swarr; &darr; &searr;</div>
+          <div class="tree-level">
+            <div class="tree-node">Tutorials</div>
+            <div class="tree-node node-highlight">Vertical Slice</div>
+            <div class="tree-node node-highlight">Tool/Plugin</div>
+          </div>
+          <div class="tree-connector">&darr;</div>
+          <div class="tree-level"><div class="tree-node node-highlight">&iquest;C&oacute;mo lo presentas?</div></div>
+          <div class="tree-connector">&swarr; &searr;</div>
+          <div class="tree-level">
+            <div class="tree-node">Solo visual</div>
+            <div class="tree-node node-highlight">Build + evidencia</div>
+          </div>
+        </div>
+        <div class="cards-grid cols-3 fade-in-up" style="margin-top:24px;">
+          <div class="card"><h3>&#127919; Scope peque&ntilde;o</h3><p>Terminar algo > ambici&oacute;n infinita</p></div>
+          <div class="card"><h3>&#128200; Medir performance</h3><p>Profiling y m&eacute;tricas = credibilidad</p></div>
+          <div class="card"><h3>&#128221; Documentar</h3><p>Tradeoffs + debugging = diferenciador</p></div>
+        </div>
+      </div>
+      <span class="retro-label">MATRIX III</span>
+    </div>
+
+    <!-- ══════ SLIDE 24: GLOBAL SERIOUS — INVADERS ══════ -->
+    <div class="slide" data-slide="24" data-game="invaders4">
+      <canvas class="game-canvas" id="game-24"></canvas>
+      <div class="slide-inner">
+        <span class="section-badge badge-aplicaciones fade-in-up">APLICACIONES</span>
+        <h2 class="slide-title fade-in-up">Videojuegos serios: casos globales</h2>
+        <div class="cards-grid cols-3 fade-in-up">
+          <div class="card"><h3>&#128218; Minecraft Education</h3><p>40,000 sistemas escolares en 100+ pa&iacute;ses. STEM gamificado a escala global.</p></div>
+          <div class="card"><h3>&#129504; Sea Hero Quest</h3><p>4M+ jugadores generando datos para investigaci&oacute;n de demencia.</p></div>
+          <div class="card"><h3>&#128138; EndeavorRx</h3><p>Primer videojuego <strong>aprobado por la FDA</strong> como tratamiento para ADHD.</p></div>
+        </div>
+      </div>
+      <span class="retro-label">SPACE INVADERS IV</span>
+    </div>
+
+    <!-- ══════ SLIDE 25: COLOMBIA — SNAKE ══════ -->
+    <div class="slide" data-slide="25" data-game="snake4">
+      <canvas class="game-canvas" id="game-25"></canvas>
+      <div class="slide-inner">
+        <span class="section-badge badge-aplicaciones fade-in-up">APLICACIONES</span>
+        <h2 class="slide-title fade-in-up">Colombia ya tiene ejemplos aplicados</h2>
+        <div class="cards-grid cols-3 fade-in-up">
+          <div class="card"><h3>&#128300; CloudLabs STEM</h3><p>375+ pr&aacute;cticas, 22+ pa&iacute;ses. Laboratorios virtuales para educaci&oacute;n STEM.</p></div>
+          <div class="card"><h3>&#127918; Gameit Engine</h3><p>Por Press Start Evolution &mdash; advergames y loyalty con analytics.</p></div>
+          <div class="card"><h3>&#127963; Ciudadela Universitaria VR</h3><p>Por Indie Level &mdash; aprendizaje inmersivo en realidad virtual.</p></div>
+        </div>
+      </div>
+      <span class="retro-label">SNAKE IV</span>
+    </div>
+
+    <!-- ══════ SLIDE 26: OPPORTUNITIES — PACMAN ══════ -->
+    <div class="slide" data-slide="26" data-game="pacman3">
+      <canvas class="game-canvas" id="game-26"></canvas>
+      <div class="slide-inner">
+        <span class="section-badge badge-aplicaciones fade-in-up">APLICACIONES</span>
+        <h2 class="slide-title fade-in-up">Oportunidad para empresas locales</h2>
+        <div class="cards-grid cols-3 fade-in-up">
+          <div class="card"><h3>&#127970; Onboarding / Training</h3><p>Simuladores de capacitaci&oacute;n, compliance gamificado.</p></div>
+          <div class="card"><h3>&#9888; Safety Simulators</h3><p>Entrenamiento de seguridad industrial en entornos virtuales.</p></div>
+          <div class="card"><h3>&#128208; STEM / AI Literacy</h3><p>Herramientas educativas para alfabetizaci&oacute;n tecnol&oacute;gica.</p></div>
+          <div class="card"><h3>&#127978; Showrooms</h3><p>Experiencias interactivas para retail y marketing.</p></div>
+          <div class="card"><h3>&#127919; Advergames</h3><p>Juegos publicitarios con m&eacute;tricas de engagement.</p></div>
+          <div class="card" style="border-color:rgba(57,255,20,0.3);"><h3 style="color:var(--neon-green);">&#128200; Ecosistema Colombia</h3><p><strong>34</strong> estudios activos &middot; <strong>Crea Digital 2025</strong> (18 proyectos) &middot; <strong>CINA</strong> 35% incentivo tributario</p></div>
+        </div>
+      </div>
+      <span class="retro-label">PAC-MAN III</span>
+    </div>
+
+    <!-- ══════ SLIDE 27: CLOSING — ALL GAMES ══════ -->
+    <div class="slide" data-slide="27" data-game="matrix4">
+      <canvas class="game-canvas" id="game-27"></canvas>
+      <div class="cover-center">
+        <span class="section-badge badge-cierre fade-in-up">CIERRE</span>
+        <h2 class="slide-title title-large fade-in-up">Press Start</h2>
+        <p class="slide-subtitle fade-in-up" style="max-width:700px;text-align:center;">Lo que desbloquea m&aacute;s r&aacute;pido:</p>
+        <div class="cards-grid cols-2 fade-in-up" style="max-width:800px;margin:0 auto;">
+          <div class="card"><h3>&#127959; Arquitectura de soluciones</h3><p>Pensar en sistemas, no en features aisladas.</p></div>
+          <div class="card"><h3>&#128027; Debugging nativo</h3><p>Profiling, memory, CPU/GPU &mdash; resolver lo que otros evitan.</p></div>
+          <div class="card"><h3>&#127912; Integraci&oacute;n de arte</h3><p>Con criterio t&eacute;cnico &mdash; performance budgets, LODs, batching.</p></div>
+          <div class="card"><h3>&#128230; Portafolio con evidencia</h3><p>Build + postmortem + m&eacute;tricas = contrataci&oacute;n.</p></div>
+        </div>
+        <div class="quote-block fade-in-up" style="max-width:700px;margin:30px auto 0;text-align:center;">&ldquo;&iquest;Cu&aacute;l ruta vas a desbloquear primero?&rdquo;</div>
+        <div class="press-start-blink fade-in-up" style="margin-top:30px;">&#9656; GAME ON &#9666;</div>
+      </div>
+      <span class="retro-label">FINAL STAGE</span>
+    </div>
+
+    <!-- ══════ SLIDE 28: SOURCES 1 — BREAKOUT ══════ -->
+    <div class="slide" data-slide="28" data-game="breakout4">
+      <canvas class="game-canvas" id="game-28"></canvas>
+      <div class="slide-inner">
+        <span class="section-badge badge-apendice fade-in-up">AP&Eacute;NDICE</span>
+        <h2 class="slide-title fade-in-up">Fuentes &mdash; Industria &amp; Frontera</h2>
+        <ul class="source-list fade-in-up">
+          <li><strong>Newzoo</strong> &mdash; Global Games Market Report 2025</li>
+          <li><strong>GDC 2026</strong> &mdash; State of the Industry Survey</li>
+          <li><strong>Unity</strong> &mdash; Gaming Report 2025</li>
+          <li><strong>Microsoft</strong> &mdash; Muse AI Platform</li>
+          <li><strong>NVIDIA</strong> &mdash; ACE (Avatar Cloud Engine)</li>
+          <li><strong>Cortical Labs</strong> &mdash; CL1 Bio-computing Chip</li>
+          <li><strong>Talent.com</strong> &mdash; Salary Data Colombia</li>
+          <li><strong>Work With Indies</strong> &mdash; Remote Game Jobs</li>
+          <li><strong>Bad Robot Games</strong> &mdash; Remote Salary Ranges</li>
+          <li><strong>ProbablyMonsters</strong> &mdash; Remote Salary Ranges</li>
+        </ul>
+      </div>
+      <span class="retro-label">BREAKOUT IV</span>
+    </div>
+
+    <!-- ══════ SLIDE 29: SOURCES 2 — PONG ══════ -->
+    <div class="slide" data-slide="29" data-game="pong4">
+      <canvas class="game-canvas" id="game-29"></canvas>
+      <div class="slide-inner">
+        <span class="section-badge badge-apendice fade-in-up">AP&Eacute;NDICE</span>
+        <h2 class="slide-title fade-in-up">Fuentes &mdash; Serious Games &amp; EdTech</h2>
+        <ul class="source-list fade-in-up">
+          <li><strong>Minecraft Education</strong> &mdash; 40,000 school systems, 100+ countries</li>
+          <li><strong>Sea Hero Quest</strong> &mdash; Glitchers / Deutsche Telekom / UCL dementia research</li>
+          <li><strong>Akili Interactive</strong> &mdash; EndeavorRx FDA authorization</li>
+          <li><strong>CloudLabs</strong> &mdash; Virtual STEM Labs, 22+ countries</li>
+          <li><strong>Press Start Evolution</strong> &mdash; Gameit Engine, advergames Colombia</li>
+          <li><strong>Indie Level</strong> &mdash; Ciudadela Universitaria VR</li>
+          <li><strong>Crea Digital 2025</strong> &mdash; MinTIC / MinCultura, 18 proyectos</li>
+          <li><strong>CINA</strong> &mdash; 35% tax incentive for creative industries</li>
+        </ul>
+      </div>
+      <span class="retro-label">PONG IV</span>
+    </div>
+
+<!-- ══════ SLIDE 30: SOBRE EL ESTUDIO ══════ -->
+<div class="slide" data-slide="30" data-game="invaders5">
+  <canvas class="game-canvas" id="game-30"></canvas>
+  <div class="slide-inner">
+    <span class="section-badge badge-industria fade-in-up">SOBRE EL ESTUDIO</span>
+    <h2 class="slide-title fade-in-up">Blind Squirrel Games</h2>
+    <p class="slide-subtitle fade-in-up">
+      El estudio detrás de esta presentación.
+    </p>
+<div class="slide-subtitle fade-in-up" style="
+  margin-top: 6px;
+  font-size: 0.8rem;
+  text-align: left;
+  opacity: 1;
+  transform: none;
+">
+  <span style="opacity:0.7;">Contacto:</span>
+  <a href="mailto:maristizabal@blindsquirrelgames.com" class="contact-link">
+    maristizabal@blindsquirrelgames.com
+  </a>
+  &nbsp;•&nbsp;
+  <a href="mailto:ssanchez@blindsquirrelgames.com" class="contact-link">
+    ssanchez@blindsquirrelgames.com
+  </a>
+</div>
+    <div class="cards-grid cols-2 fade-in-up">
+      <div class="card">
+        <h3>🎮 Quiénes somos</h3>
+        <p>
+          Blind Squirrel Games es un equipo de desarrolladores apasionados y altamente capacitados,
+          enfocados en crear experiencias de videojuegos AAA en múltiples plataformas.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>⚙️ En qué nos destacamos</h3>
+        <p>
+          Entregamos proyectos <strong class="hl-green">a tiempo y dentro del presupuesto</strong>, 
+          manteniendo altos estándares de calidad y confiabilidad.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>📊 Trayectoria</h3>
+        <div class="stat-row" style="margin-top:10px;">
+          <div class="stat-box">
+            <span class="stat-number">87%</span>
+            <span class="stat-label">Aprobación en primera certificación</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>🏆 Qué nos define</h3>
+        <ul>
+          <li>Experiencia en desarrollo AAA</li>
+          <li>Entrega multiplataforma</li>
+          <li>Alta confiabilidad en producción</li>
+          <li>Estándares de calidad elevados</li>
+        </ul>
+      </div>
+    </div>
+
+<!-- IMAGEN DE JUEGOS -->
+<div class="fade-in-up" style="margin-top: 24px; display:flex; justify-content:center;">
+  <img src="StudyImage.png" class="games-banner"/>
+</div>
+
+    <!-- REFERENCIAS -->
+    <div class="fade-in-up" style="margin-top: 24px; font-size: 0.75rem; opacity: 0.7; text-align: center;">
+      Imágenes de videojuegos utilizadas con fines educativos y de referencia visual. <br/>
+      Títulos representados incluyen: BioShock: The Collection, Borderlands Legendary Collection,
+      Mass Effect Legendary Edition, XCOM 2 Collection, Sunset Overdrive, entre otros.
+    </div>
+
+  </div>
+  <span class="retro-label">BLIND SQUIRREL</span>
+</div>
+  </div><!-- /presentation -->
+
+  <script>
+  // ════════════════════════════════════════════
+  // PARTICLES
+  // ════════════════════════════════════════════
+  (function() {
+    const c = document.getElementById('particles');
+    for (let i = 0; i < 35; i++) {
+      const p = document.createElement('div');
+      p.className = 'particle';
+      p.style.left = Math.random()*100+'%';
+      p.style.animationDuration = (8+Math.random()*12)+'s';
+      p.style.animationDelay = (Math.random()*10)+'s';
+      p.style.width = p.style.height = (2+Math.random()*3)+'px';
+      p.style.background = ['#00f0ff','#ff00e5','#39ff14','#ffe600'][Math.floor(Math.random()*4)];
+      c.appendChild(p);
+    }
+  })();
+
+  // ════════════════════════════════════════════
+  // NAVIGATION
+  // ════════════════════════════════════════════
+  let currentSlide = 1;
+  const totalSlides = 30;
+  const slides = document.querySelectorAll('.slide');
+
+  function updateProgress() {
+    document.getElementById('progress-bar').style.width = (currentSlide/totalSlides*100)+'%';
+    document.getElementById('slide-counter').textContent = String(currentSlide).padStart(2,'0')+' / '+totalSlides;
+  }
+
+  function goToSlide(n) {
+    if (n < 1 || n > totalSlides) return;
+    const dir = n > currentSlide ? 'left' : 'right';
+    slides.forEach((s,i) => {
+      s.classList.remove('active','exit-left','exit-right');
+      if (i+1 === currentSlide) s.classList.add(dir==='left'?'exit-left':'exit-right');
+    });
+    currentSlide = n;
+    setTimeout(() => {
+      slides.forEach((s,i) => {
+        s.classList.remove('exit-left','exit-right');
+        if (i+1 === currentSlide) s.classList.add('active');
+      });
+      updateProgress();
+      startGameForSlide(currentSlide);
+    }, 80);
+  }
+  function nextSlide() { goToSlide(currentSlide+1); }
+  function prevSlide() { goToSlide(currentSlide-1); }
+
+  document.addEventListener('keydown', e => {
+    if (e.key==='ArrowRight'||e.key===' ') { e.preventDefault(); nextSlide(); }
+    if (e.key==='ArrowLeft') { e.preventDefault(); prevSlide(); }
+    if (e.key==='Home') { e.preventDefault(); goToSlide(1); }
+    if (e.key==='End') { e.preventDefault(); goToSlide(totalSlides); }
+  });
+  let touchX=0;
+  document.addEventListener('touchstart', e => { touchX=e.changedTouches[0].screenX; });
+  document.addEventListener('touchend', e => {
+    const d = touchX-e.changedTouches[0].screenX;
+    if (Math.abs(d)>50) d>0?nextSlide():prevSlide();
+  });
+
+  function showPath(p) { goToSlide({tutorial:17,vertical:18,tooling:19}[p]); }
+  function showOutcome(o) { goToSlide({weak:21,strong:22}[o]); }
+
+  // Counter animation
+  const obs = new MutationObserver(() => {
+    document.querySelectorAll('.slide.active .stat-number[data-count]').forEach(el => {
+      const t = parseFloat(el.dataset.count);
+      const pfx = el.textContent.startsWith('$')?'$':'';
+      let cur=0; const step=t/40;
+      const timer = setInterval(()=>{cur+=step;if(cur>=t){cur=t;clearInterval(timer);}el.textContent=pfx+cur.toFixed(1);},30);
+    });
+  });
+  slides.forEach(s => obs.observe(s,{attributes:true,attributeFilter:['class']}));
+  updateProgress();
+
+  // ════════════════════════════════════════════
+  // RETRO GAMES ENGINE
+  // ════════════════════════════════════════════
+  const activeGames = {};
+
+  function startGameForSlide(slideNum) {
+    // Stop all running games
+    Object.keys(activeGames).forEach(k => {
+      if (activeGames[k]) { cancelAnimationFrame(activeGames[k]); delete activeGames[k]; }
+    });
+
+    const slide = document.querySelector(`[data-slide="${slideNum}"]`);
+    if (!slide) return;
+    const gameType = slide.dataset.game;
+    const canvas = document.getElementById('game-'+slideNum);
+    if (!canvas || !gameType) return;
+
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    const ctx = canvas.getContext('2d');
+
+    if (gameType.startsWith('matrix')) initMatrix(ctx, canvas, slideNum);
+    else if (gameType.startsWith('snake')) initSnake(ctx, canvas, slideNum);
+    else if (gameType.startsWith('invaders')) initInvaders(ctx, canvas, slideNum);
+    else if (gameType.startsWith('pong')) initPong(ctx, canvas, slideNum);
+    else if (gameType.startsWith('asteroids')) initAsteroids(ctx, canvas, slideNum);
+    else if (gameType.startsWith('breakout')) initBreakout(ctx, canvas, slideNum);
+    else if (gameType.startsWith('tetris')) initTetris(ctx, canvas, slideNum);
+    else if (gameType.startsWith('pacman')) initPacman(ctx, canvas, slideNum);
+  }
+
+  // ── MATRIX RAIN ──
+  function initMatrix(ctx, canvas, id) {
+    const cols = Math.floor(canvas.width / 18);
+    const drops = Array(cols).fill(1);
+    const chars = 'アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン0123456789ABCDEF';
+    function draw() {
+      ctx.fillStyle = 'rgba(10,10,15,0.06)';
+      ctx.fillRect(0,0,canvas.width,canvas.height);
+      ctx.font = '14px JetBrains Mono, monospace';
+      for (let i=0;i<drops.length;i++) {
+        const ch = chars[Math.floor(Math.random()*chars.length)];
+        const hue = 120+Math.sin(i*0.1+Date.now()*0.001)*40;
+        ctx.fillStyle = `hsla(${hue},100%,55%,0.9)`;
+        ctx.fillText(ch,i*18,drops[i]*18);
+        if (drops[i]*18>canvas.height && Math.random()>0.975) drops[i]=0;
+        drops[i]++;
+      }
+      activeGames[id] = requestAnimationFrame(draw);
+    }
+    draw();
+  }
+
+  // ── SNAKE ──
+  function initSnake(ctx, canvas, id) {
+    const sz = 12;
+    const cols = Math.floor(canvas.width/sz);
+    const rows = Math.floor(canvas.height/sz);
+    let snake = [{x:Math.floor(cols/2),y:Math.floor(rows/2)}];
+    for(let i=1;i<15;i++) snake.push({x:snake[0].x-i,y:snake[0].y});
+    let dir = {x:1,y:0};
+    let food = newFood();
+    let tick = 0;
+    function newFood() { return {x:Math.floor(Math.random()*cols),y:Math.floor(Math.random()*rows)}; }
+    function autoDir() {
+      const head=snake[0];
+      const dx=food.x-head.x, dy=food.y-head.y;
+      if(Math.random()>0.3) {
+        if(Math.abs(dx)>Math.abs(dy)) dir={x:dx>0?1:-1,y:0};
+        else dir={x:0,y:dy>0?1:-1};
+      } else {
+        dir = [{x:1,y:0},{x:-1,y:0},{x:0,y:1},{x:0,y:-1}][Math.floor(Math.random()*4)];
+      }
+    }
+    function draw() {
+      ctx.fillStyle = 'rgba(10,10,15,0.15)';
+      ctx.fillRect(0,0,canvas.width,canvas.height);
+      tick++;
+      if (tick%4===0) {
+        autoDir();
+        const nh = {x:(snake[0].x+dir.x+cols)%cols, y:(snake[0].y+dir.y+rows)%rows};
+        snake.unshift(nh);
+        if(nh.x===food.x&&nh.y===food.y) food=newFood();
+        else snake.pop();
+      }
+      // Draw food
+      ctx.shadowBlur=12; ctx.shadowColor='#ff00e5';
+      ctx.fillStyle='#ff00e5';
+      ctx.fillRect(food.x*sz,food.y*sz,sz-1,sz-1);
+      ctx.shadowBlur=0;
+      // Draw snake
+      snake.forEach((s,i)=>{
+        const a = 1-i/snake.length*0.7;
+        ctx.fillStyle = `rgba(57,255,20,${a})`;
+        ctx.fillRect(s.x*sz,s.y*sz,sz-1,sz-1);
+      });
+      // Glow on head
+      ctx.shadowBlur=15; ctx.shadowColor='#39ff14';
+      ctx.fillStyle='#39ff14';
+      ctx.fillRect(snake[0].x*sz,snake[0].y*sz,sz-1,sz-1);
+      ctx.shadowBlur=0;
+      activeGames[id] = requestAnimationFrame(draw);
+    }
+    draw();
+  }
+
+  // ── SPACE INVADERS ──
+  function initInvaders(ctx, canvas, id) {
+    const invaders=[];
+    const cols=11, rows=5, sz=20, gap=8;
+    const startX = (canvas.width-(cols*(sz+gap)))/2;
+    for(let r=0;r<rows;r++) for(let c=0;c<cols;c++) {
+      invaders.push({x:startX+c*(sz+gap),y:60+r*(sz+gap),alive:true,type:r});
+    }
+    let dirX=1, stepDown=false, speed=0.5;
+    const bullets=[];
+    const playerX = canvas.width/2;
+    let frame=0;
+    function draw() {
+      ctx.fillStyle='rgba(10,10,15,0.12)';
+      ctx.fillRect(0,0,canvas.width,canvas.height);
+      frame++;
+      // Move invaders
+      let edgeHit=false;
+      invaders.forEach(inv=>{if(!inv.alive)return; inv.x+=dirX*speed; if(inv.x<10||inv.x>canvas.width-30) edgeHit=true;});
+      if(edgeHit) { dirX*=-1; invaders.forEach(inv=>{inv.y+=12;}); }
+      // Reset if they go too low
+      if(invaders.some(inv=>inv.alive&&inv.y>canvas.height-50)) {
+        invaders.forEach((inv,i)=>{
+          const r=Math.floor(i/cols), c=i%cols;
+          inv.x=startX+c*(sz+gap); inv.y=60+r*(sz+gap); inv.alive=true;
+        });
+      }
+      // Random shots
+      if(frame%90===0) {
+        const alive=invaders.filter(i=>i.alive);
+        if(alive.length) {
+          const shooter=alive[Math.floor(Math.random()*alive.length)];
+          bullets.push({x:shooter.x+sz/2,y:shooter.y+sz,dy:3});
+        }
+      }
+      // Draw invaders
+      invaders.forEach(inv => {
+        if(!inv.alive) return;
+        const colors=['#00f0ff','#00f0ff','#ff00e5','#ff00e5','#39ff14'];
+        ctx.fillStyle=colors[inv.type];
+        ctx.shadowBlur=6; ctx.shadowColor=colors[inv.type];
+        // Pixel art invader shape
+        const px=2;
+        const patterns = [
+          [0,1,0,0,0,1,0, 0,0,1,1,1,0,0, 0,1,1,1,1,1,0, 1,0,1,1,1,0,1, 1,1,1,1,1,1,1],
+          [0,0,1,0,1,0,0, 0,1,1,1,1,1,0, 1,1,0,1,0,1,1, 1,1,1,1,1,1,1, 0,1,0,0,0,1,0],
+        ];
+        const pat = patterns[inv.type%2];
+        const w=7;
+        for(let pi=0;pi<pat.length;pi++) {
+          if(pat[pi]) {
+            const px2=pi%w, py2=Math.floor(pi/w);
+            ctx.fillRect(inv.x+px2*px*1.4, inv.y+py2*px*1.4, px*1.2, px*1.2);
+          }
+        }
+        ctx.shadowBlur=0;
+      });
+      // Draw bullets
+      bullets.forEach((b,i) => {
+        b.y+=b.dy;
+        ctx.fillStyle='#ffe600';
+        ctx.shadowBlur=8; ctx.shadowColor='#ffe600';
+        ctx.fillRect(b.x,b.y,2,8);
+        ctx.shadowBlur=0;
+        if(b.y>canvas.height) bullets.splice(i,1);
+      });
+      // Player ship
+      ctx.fillStyle='#00f0ff';
+      ctx.shadowBlur=10; ctx.shadowColor='#00f0ff';
+      ctx.beginPath();
+      ctx.moveTo(playerX,canvas.height-30);
+      ctx.lineTo(playerX-12,canvas.height-15);
+      ctx.lineTo(playerX+12,canvas.height-15);
+      ctx.fill();
+      ctx.shadowBlur=0;
+      activeGames[id]=requestAnimationFrame(draw);
+    }
+    draw();
+  }
+
+  // ── PONG ──
+  function initPong(ctx, canvas, id) {
+    const pw=8,ph=70;
+    let p1y=canvas.height/2-ph/2, p2y=canvas.height/2-ph/2;
+    let bx=canvas.width/2, by=canvas.height/2, bdx=3, bdy=2;
+    let s1=0,s2=0;
+    function draw() {
+      ctx.fillStyle='rgba(10,10,15,0.15)';
+      ctx.fillRect(0,0,canvas.width,canvas.height);
+      // Ball
+      bx+=bdx; by+=bdy;
+      if(by<0||by>canvas.height) bdy*=-1;
+      // AI paddles
+      p1y+=(by-p1y-ph/2)*0.04;
+      p2y+=(by-p2y-ph/2)*0.035;
+      // Bounce off paddles
+      if(bx<30&&by>p1y&&by<p1y+ph) { bdx=Math.abs(bdx); bdy+=(Math.random()-0.5)*2; }
+      if(bx>canvas.width-30&&by>p2y&&by<p2y+ph) { bdx=-Math.abs(bdx); bdy+=(Math.random()-0.5)*2; }
+      // Score
+      if(bx<0) { s2++; bx=canvas.width/2; by=canvas.height/2; bdx=3; bdy=2*(Math.random()>0.5?1:-1); }
+      if(bx>canvas.width) { s1++; bx=canvas.width/2; by=canvas.height/2; bdx=-3; bdy=2*(Math.random()>0.5?1:-1); }
+      // Center line
+      ctx.setLineDash([8,12]);
+      ctx.strokeStyle='rgba(0,240,255,0.2)';
+      ctx.beginPath(); ctx.moveTo(canvas.width/2,0); ctx.lineTo(canvas.width/2,canvas.height); ctx.stroke();
+      ctx.setLineDash([]);
+      // Paddles
+      ctx.shadowBlur=12; ctx.shadowColor='#00f0ff';
+      ctx.fillStyle='#00f0ff';
+      ctx.fillRect(20,p1y,pw,ph);
+      ctx.shadowColor='#ff00e5'; ctx.fillStyle='#ff00e5';
+      ctx.fillRect(canvas.width-28,p2y,pw,ph);
+      ctx.shadowBlur=0;
+      // Ball
+      ctx.shadowBlur=15; ctx.shadowColor='#ffe600'; ctx.fillStyle='#ffe600';
+      ctx.beginPath(); ctx.arc(bx,by,6,0,Math.PI*2); ctx.fill();
+      ctx.shadowBlur=0;
+      // Score
+      ctx.font='28px Orbitron, sans-serif'; ctx.fillStyle='rgba(0,240,255,0.25)';
+      ctx.fillText(s1,canvas.width/2-60,50);
+      ctx.fillStyle='rgba(255,0,229,0.25)';
+      ctx.fillText(s2,canvas.width/2+40,50);
+      activeGames[id]=requestAnimationFrame(draw);
+    }
+    draw();
+  }
+
+  // ── ASTEROIDS ──
+  function initAsteroids(ctx, canvas, id) {
+    const asteroids=[];
+    for(let i=0;i<12;i++) {
+      const r=15+Math.random()*25;
+      const verts=[];
+      const numV=6+Math.floor(Math.random()*4);
+      for(let v=0;v<numV;v++) {
+        const angle=(v/numV)*Math.PI*2;
+        const dist=r*(0.7+Math.random()*0.3);
+        verts.push({x:Math.cos(angle)*dist, y:Math.sin(angle)*dist});
+      }
+      asteroids.push({
+        x:Math.random()*canvas.width, y:Math.random()*canvas.height,
+        vx:(Math.random()-0.5)*1.5, vy:(Math.random()-0.5)*1.5,
+        rot:0, rotSpeed:(Math.random()-0.5)*0.02,
+        verts, r
+      });
+    }
+    // Ship
+    let sx=canvas.width/2, sy=canvas.height/2, srot=0, svx=0, svy=0;
+    const shipBullets=[];
+    let frame=0;
+    function draw() {
+      ctx.fillStyle='rgba(10,10,15,0.12)';
+      ctx.fillRect(0,0,canvas.width,canvas.height);
+      frame++;
+      // Auto-fly ship
+      srot+=Math.sin(frame*0.01)*0.02;
+      svx+=Math.cos(srot)*0.05; svy+=Math.sin(srot)*0.05;
+      svx*=0.99; svy*=0.99;
+      sx=(sx+svx+canvas.width)%canvas.width;
+      sy=(sy+svy+canvas.height)%canvas.height;
+      // Auto-shoot
+      if(frame%50===0) shipBullets.push({x:sx+Math.cos(srot)*15,y:sy+Math.sin(srot)*15,vx:Math.cos(srot)*5,vy:Math.sin(srot)*5,life:80});
+      // Draw ship
+      ctx.save(); ctx.translate(sx,sy); ctx.rotate(srot);
+      ctx.strokeStyle='#00f0ff'; ctx.shadowBlur=8; ctx.shadowColor='#00f0ff'; ctx.lineWidth=1.5;
+      ctx.beginPath(); ctx.moveTo(15,0); ctx.lineTo(-10,-8); ctx.lineTo(-6,0); ctx.lineTo(-10,8); ctx.closePath(); ctx.stroke();
+      ctx.shadowBlur=0; ctx.restore();
+      // Thrust
+      if(frame%3<2) {
+        ctx.fillStyle='#ff6a00';
+        ctx.beginPath();
+        ctx.arc(sx-Math.cos(srot)*12, sy-Math.sin(srot)*12, 3, 0, Math.PI*2);
+        ctx.fill();
+      }
+      // Asteroids
+      asteroids.forEach(a => {
+        a.x=(a.x+a.vx+canvas.width)%canvas.width;
+        a.y=(a.y+a.vy+canvas.height)%canvas.height;
+        a.rot+=a.rotSpeed;
+        ctx.save(); ctx.translate(a.x,a.y); ctx.rotate(a.rot);
+        ctx.strokeStyle='rgba(255,0,229,0.6)'; ctx.lineWidth=1;
+        ctx.beginPath();
+        ctx.moveTo(a.verts[0].x,a.verts[0].y);
+        a.verts.forEach(v=>ctx.lineTo(v.x,v.y));
+        ctx.closePath(); ctx.stroke();
+        ctx.restore();
+      });
+      // Bullets
+      for(let i=shipBullets.length-1;i>=0;i--) {
+        const b=shipBullets[i];
+        b.x+=b.vx; b.y+=b.vy; b.life--;
+        if(b.life<=0) { shipBullets.splice(i,1); continue; }
+        ctx.fillStyle='#ffe600'; ctx.shadowBlur=6; ctx.shadowColor='#ffe600';
+        ctx.fillRect(b.x-1,b.y-1,3,3);
+        ctx.shadowBlur=0;
+      }
+      activeGames[id]=requestAnimationFrame(draw);
+    }
+    draw();
+  }
+
+  // ── BREAKOUT ──
+  function initBreakout(ctx, canvas, id) {
+    const brickRows=5, brickCols=Math.floor(canvas.width/70);
+    const brickW=60, brickH=14, brickGap=6;
+    const bricks=[];
+    const offsetX=(canvas.width-(brickCols*(brickW+brickGap)))/2;
+    const colors=['#00f0ff','#39ff14','#ffe600','#ff00e5','#ff6a00'];
+    for(let r=0;r<brickRows;r++) for(let c=0;c<brickCols;c++) {
+      bricks.push({x:offsetX+c*(brickW+brickGap),y:40+r*(brickH+brickGap),alive:true,color:colors[r]});
+    }
+    let px=canvas.width/2, bx=canvas.width/2, by=canvas.height-60, bdx=2.5, bdy=-2.5;
+    function draw() {
+      ctx.fillStyle='rgba(10,10,15,0.14)';
+      ctx.fillRect(0,0,canvas.width,canvas.height);
+      // Paddle AI
+      px+=(bx-px)*0.06;
+      // Ball
+      bx+=bdx; by+=bdy;
+      if(bx<0||bx>canvas.width) bdx*=-1;
+      if(by<0) bdy*=-1;
+      // Paddle
+      if(by>canvas.height-35&&by<canvas.height-25&&Math.abs(bx-px)<45) { bdy=-Math.abs(bdy); bdx+=(bx-px)*0.05; }
+      // Reset if missed
+      if(by>canvas.height+10) { by=canvas.height-60; bdy=-2.5; bdx=2.5*(Math.random()>0.5?1:-1); }
+      // Brick collision
+      bricks.forEach(b => {
+        if(!b.alive) return;
+        if(bx>b.x&&bx<b.x+brickW&&by>b.y&&by<b.y+brickH) {
+          b.alive=false; bdy*=-1;
+        }
+      });
+      // Reset bricks if all dead
+      if(!bricks.some(b=>b.alive)) bricks.forEach(b=>{b.alive=true;});
+      // Draw bricks
+      bricks.forEach(b => {
+        if(!b.alive) return;
+        ctx.fillStyle=b.color;
+        ctx.shadowBlur=4; ctx.shadowColor=b.color;
+        ctx.fillRect(b.x,b.y,brickW,brickH);
+        ctx.shadowBlur=0;
+      });
+      // Draw paddle
+      ctx.fillStyle='#00f0ff'; ctx.shadowBlur=10; ctx.shadowColor='#00f0ff';
+      ctx.fillRect(px-40,canvas.height-30,80,8);
+      ctx.shadowBlur=0;
+      // Draw ball
+      ctx.fillStyle='#ffe600'; ctx.shadowBlur=12; ctx.shadowColor='#ffe600';
+      ctx.beginPath(); ctx.arc(bx,by,5,0,Math.PI*2); ctx.fill();
+      ctx.shadowBlur=0;
+      activeGames[id]=requestAnimationFrame(draw);
+    }
+    draw();
+  }
+
+  // ── TETRIS ──
+  function initTetris(ctx, canvas, id) {
+    const sz=16;
+    const gridCols=Math.floor(canvas.width/sz);
+    const gridRows=Math.floor(canvas.height/sz);
+    const pieces=[
+      {shape:[[1,1,1,1]], color:'#00f0ff'},
+      {shape:[[1,1],[1,1]], color:'#ffe600'},
+      {shape:[[0,1,0],[1,1,1]], color:'#ff00e5'},
+      {shape:[[1,0],[1,0],[1,1]], color:'#ff6a00'},
+      {shape:[[0,1],[0,1],[1,1]], color:'#39ff14'},
+      {shape:[[1,1,0],[0,1,1]], color:'#ff003c'},
+      {shape:[[0,1,1],[1,1,0]], color:'#7b68ee'},
+    ];
+    const fallingPieces=[];
+    let frame=0;
+    function spawnPiece() {
+      const p=pieces[Math.floor(Math.random()*pieces.length)];
+      fallingPieces.push({
+        x: Math.floor(Math.random()*(gridCols-4)),
+        y: -4,
+        shape: p.shape,
+        color: p.color,
+        speed: 0.3+Math.random()*0.5
+      });
+    }
+    for(let i=0;i<6;i++) { spawnPiece(); fallingPieces[i].y=-Math.random()*gridRows; }
+    function draw() {
+      ctx.fillStyle='rgba(10,10,15,0.08)';
+      ctx.fillRect(0,0,canvas.width,canvas.height);
+      frame++;
+      if(frame%60===0) spawnPiece();
+      // Draw & move pieces
+      for(let i=fallingPieces.length-1;i>=0;i--) {
+        const p=fallingPieces[i];
+        p.y+=p.speed;
+        if(p.y*sz>canvas.height+50) { fallingPieces.splice(i,1); continue; }
+        ctx.fillStyle=p.color;
+        ctx.shadowBlur=4; ctx.shadowColor=p.color;
+        p.shape.forEach((row,ry)=>{
+          row.forEach((cell,cx)=>{
+            if(cell) ctx.fillRect((p.x+cx)*sz, Math.floor(p.y+ry)*sz, sz-1, sz-1);
+          });
+        });
+        ctx.shadowBlur=0;
+      }
+      // Grid lines (subtle)
+      ctx.strokeStyle='rgba(0,240,255,0.03)'; ctx.lineWidth=0.5;
+      for(let x=0;x<gridCols;x++) { ctx.beginPath(); ctx.moveTo(x*sz,0); ctx.lineTo(x*sz,canvas.height); ctx.stroke(); }
+      for(let y=0;y<gridRows;y++) { ctx.beginPath(); ctx.moveTo(0,y*sz); ctx.lineTo(canvas.width,y*sz); ctx.stroke(); }
+      activeGames[id]=requestAnimationFrame(draw);
+    }
+    draw();
+  }
+
+  // ── PAC-MAN ──
+  function initPacman(ctx, canvas, id) {
+    const sz=16;
+    // Create a simple maze-like grid
+    const cols=Math.floor(canvas.width/sz);
+    const rows=Math.floor(canvas.height/sz);
+    const dots=[];
+    for(let r=2;r<rows-2;r+=2) for(let c=2;c<cols-2;c+=2) {
+      dots.push({x:c*sz+sz/2,y:r*sz+sz/2,eaten:false});
+    }
+    let px=canvas.width/2, py=canvas.height/2, pdir=0, pmouth=0;
+    const ghosts=[];
+    const ghostColors=['#ff003c','#ff69b4','#00f0ff','#ff6a00'];
+    for(let i=0;i<4;i++) {
+      ghosts.push({
+        x:100+Math.random()*(canvas.width-200),
+        y:100+Math.random()*(canvas.height-200),
+        vx:(Math.random()-0.5)*2,
+        vy:(Math.random()-0.5)*2,
+        color:ghostColors[i]
+      });
+    }
+    let targetDot=0, frame=0;
+    function draw() {
+      ctx.fillStyle='rgba(10,10,15,0.1)';
+      ctx.fillRect(0,0,canvas.width,canvas.height);
+      frame++;
+      pmouth = Math.abs(Math.sin(frame*0.15))*0.4;
+      // Pac-Man AI: go to nearest uneaten dot
+      let nearest=null, nearDist=Infinity;
+      dots.forEach((d,i)=>{
+        if(d.eaten) return;
+        const dist=Math.hypot(d.x-px,d.y-py);
+        if(dist<nearDist) { nearDist=dist; nearest=d; targetDot=i; }
+      });
+      if(nearest) {
+        const dx=nearest.x-px, dy=nearest.y-py;
+        const dist=Math.hypot(dx,dy);
+        if(dist>2) { px+=dx/dist*2.5; py+=dy/dist*2.5; pdir=Math.atan2(dy,dx); }
+        if(dist<sz) { nearest.eaten=true; }
+      }
+      // Reset dots if all eaten
+      if(!dots.some(d=>!d.eaten)) dots.forEach(d=>{d.eaten=false;});
+      // Draw dots
+      dots.forEach(d=>{
+        if(d.eaten) return;
+        ctx.fillStyle='rgba(255,230,0,0.5)';
+        ctx.beginPath(); ctx.arc(d.x,d.y,2.5,0,Math.PI*2); ctx.fill();
+      });
+      // Draw Pac-Man
+      ctx.fillStyle='#ffe600'; ctx.shadowBlur=12; ctx.shadowColor='#ffe600';
+      ctx.beginPath();
+      ctx.arc(px,py,12, pdir+pmouth, pdir+Math.PI*2-pmouth);
+      ctx.lineTo(px,py);
+      ctx.fill();
+      ctx.shadowBlur=0;
+      // Ghosts
+      ghosts.forEach(g=>{
+        // Wander + slight chase
+        g.vx+=(Math.random()-0.5)*0.3; g.vy+=(Math.random()-0.5)*0.3;
+        g.vx=Math.max(-2,Math.min(2,g.vx)); g.vy=Math.max(-2,Math.min(2,g.vy));
+        g.x+=g.vx; g.y+=g.vy;
+        if(g.x<10||g.x>canvas.width-10) g.vx*=-1;
+        if(g.y<10||g.y>canvas.height-10) g.vy*=-1;
+        // Ghost shape
+        ctx.fillStyle=g.color; ctx.shadowBlur=8; ctx.shadowColor=g.color;
+        ctx.beginPath();
+        ctx.arc(g.x,g.y-4,10,Math.PI,0);
+        ctx.lineTo(g.x+10,g.y+8);
+        for(let w=0;w<3;w++) {
+          ctx.lineTo(g.x+10-w*7-3,g.y+4);
+          ctx.lineTo(g.x+10-(w+1)*7,g.y+8);
+        }
+        ctx.fill();
+        ctx.shadowBlur=0;
+        // Eyes
+        ctx.fillStyle='#fff';
+        ctx.beginPath(); ctx.arc(g.x-4,g.y-5,3,0,Math.PI*2); ctx.fill();
+        ctx.beginPath(); ctx.arc(g.x+4,g.y-5,3,0,Math.PI*2); ctx.fill();
+        ctx.fillStyle='#222';
+        ctx.beginPath(); ctx.arc(g.x-3,g.y-5,1.5,0,Math.PI*2); ctx.fill();
+        ctx.beginPath(); ctx.arc(g.x+5,g.y-5,1.5,0,Math.PI*2); ctx.fill();
+      });
+      activeGames[id]=requestAnimationFrame(draw);
+    }
+    draw();
+  }
+
+  // ── START FIRST SLIDE GAME ──
+  window.addEventListener('resize', () => {
+    document.querySelectorAll('.game-canvas').forEach(c => {
+      c.width=window.innerWidth; c.height=window.innerHeight;
+    });
+    startGameForSlide(currentSlide);
+  });
+  startGameForSlide(1);
+
+  </script>
+</body>
+</html>

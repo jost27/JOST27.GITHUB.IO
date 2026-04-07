@@ -1,0 +1,3074 @@
+[
+  {
+    "guid": "0dUiux0vDDhfFYvCWweETU",
+    "name": "Viga-004",
+    "type": "IfcBeam",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "2KK9unuT17XBmn_PrLNMRu",
+    "name": "Viga-003",
+    "type": "IfcBeam",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "3RQRVKQufC39YbLETJIYzp",
+    "name": "Viga-004",
+    "type": "IfcBeam",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "05$wgkoZ13Iux6KcKXhmHh",
+    "name": "Viga-003",
+    "type": "IfcBeam",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "3YUZ6QLCrCi8mNX7bpT_cQ",
+    "name": "Viga-003",
+    "type": "IfcBeam",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "1RrezgH8HAhOiFyUooJ7p_",
+    "name": "Viga-001",
+    "type": "IfcBeam",
+    "storey": "Segundo piso"
+  },
+  {
+    "guid": "0xk3mpYVP48BsL1jlrO8Gb",
+    "name": "Viga-002",
+    "type": "IfcBeam",
+    "storey": "Nivel ático"
+  },
+  {
+    "guid": "1lxbwzI7b5tPR0EcZIj2yX",
+    "name": "Viga-002",
+    "type": "IfcBeam",
+    "storey": "Nivel ático"
+  },
+  {
+    "guid": "2BQt17NG11tR1s$_5JiRtm",
+    "name": "Viga-002",
+    "type": "IfcBeam",
+    "storey": "Nivel ático"
+  },
+  {
+    "guid": "1CfUAkezL6ZO42GswikOL6",
+    "name": "Viga-002",
+    "type": "IfcBeam",
+    "storey": "Nivel ático"
+  },
+  {
+    "guid": "2xj7rzief5mwp_yQ04hUDW",
+    "name": "Viga-002",
+    "type": "IfcBeam",
+    "storey": "Nivel ático"
+  },
+  {
+    "guid": "1YTqpjB$98ruCz2Gk_zsjx",
+    "name": "Viga-002",
+    "type": "IfcBeam",
+    "storey": "Nivel ático"
+  },
+  {
+    "guid": "05PGhamv12Fu89GYwpgp3y",
+    "name": "Viga-002",
+    "type": "IfcBeam",
+    "storey": "Nivel ático"
+  },
+  {
+    "guid": "3KdYFCCEz8QBKLhHJyu_CP",
+    "name": "Viga-002",
+    "type": "IfcBeam",
+    "storey": "Nivel ático"
+  },
+  {
+    "guid": "119NN5SxP3_hmJZIxwIc4x",
+    "name": "Viga-002",
+    "type": "IfcBeam",
+    "storey": "Nivel ático"
+  },
+  {
+    "guid": "2bdaopOvj6tw1y2M_wg1z$",
+    "name": "Viga-002",
+    "type": "IfcBeam",
+    "storey": "Nivel ático"
+  },
+  {
+    "guid": "3AukG4HCjC3Oe81m_ACz4$",
+    "name": "Viga-002",
+    "type": "IfcBeam",
+    "storey": "Nivel ático"
+  },
+  {
+    "guid": "0w$RLv7tbE5f51EVTffamN",
+    "name": "Viga-002",
+    "type": "IfcBeam",
+    "storey": "Nivel ático"
+  },
+  {
+    "guid": "1OulBKgXj92vvyf$stRqAK",
+    "name": "Viga-002",
+    "type": "IfcBeam",
+    "storey": "Nivel ático"
+  },
+  {
+    "guid": "3o3$KTksP2$P8JYitkribl",
+    "name": "Viga-002",
+    "type": "IfcBeam",
+    "storey": "Nivel ático"
+  },
+  {
+    "guid": "0e8ApFb4P0fwqNSOZ6FMh6",
+    "name": "Viga-002",
+    "type": "IfcBeam",
+    "storey": "Nivel ático"
+  },
+  {
+    "guid": "0ZuAI9Ug5DqAYk14h2wpVk",
+    "name": "Viga-002",
+    "type": "IfcBeam",
+    "storey": "Nivel ático"
+  },
+  {
+    "guid": "1p_gZIICT2XvNsHyR5mKoQ",
+    "name": "Viga-002",
+    "type": "IfcBeam",
+    "storey": "Nivel ático"
+  },
+  {
+    "guid": "0oXjj0ytX93gfjFesx9OFX",
+    "name": "Viga-002",
+    "type": "IfcBeam",
+    "storey": "Nivel ático"
+  },
+  {
+    "guid": "11hp_323LEqfUQSyz_arwW",
+    "name": "Viga-002",
+    "type": "IfcBeam",
+    "storey": "Nivel ático"
+  },
+  {
+    "guid": "01vAau3v96IP0MxnSfpinw",
+    "name": "Viga-002",
+    "type": "IfcBeam",
+    "storey": "Nivel ático"
+  },
+  {
+    "guid": "0BYRMeKTrEVRDP8GnDgvE3",
+    "name": "Viga-002",
+    "type": "IfcBeam",
+    "storey": "Nivel ático"
+  },
+  {
+    "guid": "2HJBcakPn2SBf19_nJXymM",
+    "name": "Viga-002",
+    "type": "IfcBeam",
+    "storey": "Nivel ático"
+  },
+  {
+    "guid": "07DiVp6Qr9GhKqnP9KdK9l",
+    "name": "Viga-002",
+    "type": "IfcBeam",
+    "storey": "Nivel ático"
+  },
+  {
+    "guid": "2GVtDSYNvD0eResF1nIHhI",
+    "name": "Viga-002",
+    "type": "IfcBeam",
+    "storey": "Nivel ático"
+  },
+  {
+    "guid": "2VbnAFW456WOKd_ywVhzSX",
+    "name": "Viga-002",
+    "type": "IfcBeam",
+    "storey": "Nivel ático"
+  },
+  {
+    "guid": "1bO370gmjFlv3wfytLNXuE",
+    "name": "Viga-002",
+    "type": "IfcBeam",
+    "storey": "Nivel ático"
+  },
+  {
+    "guid": "3aFOCzCyn7jugITQIfK0FA",
+    "name": "Viga-002",
+    "type": "IfcBeam",
+    "storey": "Nivel ático"
+  },
+  {
+    "guid": "0rHiomUc9FN8A2GoKB46xl",
+    "name": "Viga-002",
+    "type": "IfcBeam",
+    "storey": "Nivel ático"
+  },
+  {
+    "guid": "0VSQpA_rDARQghI4HEOZ$G",
+    "name": "Viga-002",
+    "type": "IfcBeam",
+    "storey": "Nivel ático"
+  },
+  {
+    "guid": "3Lk3qmLfTBAQsOVGkPciN4",
+    "name": "Viga-002",
+    "type": "IfcBeam",
+    "storey": "Nivel ático"
+  },
+  {
+    "guid": "04WPvLDND2GPCAXdF_gkVB",
+    "name": "Viga-002",
+    "type": "IfcBeam",
+    "storey": "Nivel ático"
+  },
+  {
+    "guid": "0BmP6Ag$n7yfEr87nxVM67",
+    "name": "Viga-002",
+    "type": "IfcBeam",
+    "storey": "Nivel ático"
+  },
+  {
+    "guid": "3P2eVp2D9A5f1FGVUKO7ey",
+    "name": "Viga-002",
+    "type": "IfcBeam",
+    "storey": "Nivel ático"
+  },
+  {
+    "guid": "3Uj$YqRnj5mvrXYRajBLAX",
+    "name": "Viga-002",
+    "type": "IfcBeam",
+    "storey": "Nivel ático"
+  },
+  {
+    "guid": "02f85DQbi$_m812EnKGZew",
+    "name": "Acero - Estructural",
+    "type": "IfcBuildingElementPart",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "19wXFxAAFqlL1OHWEPDwVA",
+    "name": "Acero",
+    "type": "IfcBuildingElementPart",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "0KwxQGJDkuWEoxi6UqcSC8",
+    "name": "Acero - Estructural",
+    "type": "IfcBuildingElementPart",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "1HWaAzBqqiSbnF7rvzKrqU",
+    "name": "Madera - Estructural",
+    "type": "IfcBuildingElementPart",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "0tonOZHihW5wwVEYNIDDum",
+    "name": "Madera - Estructural",
+    "type": "IfcBuildingElementPart",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "2BrJNV3L4cI4eWWKA2_mz1",
+    "name": "Acero",
+    "type": "IfcBuildingElementPart",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "05HpgrB2hdYDteR9RRCBBK",
+    "name": "Acero",
+    "type": "IfcBuildingElementPart",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "3kBsWDb3miOraKzqsVJAtT",
+    "name": "Acero - Estructural",
+    "type": "IfcBuildingElementPart",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "1mIv2eHjOS93S2bmv2Kh$J",
+    "name": "Madera - Estructural",
+    "type": "IfcBuildingElementPart",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "3x$LoT5O0E2WhxtQyVmMH4",
+    "name": "Madera - Estructural",
+    "type": "IfcBuildingElementPart",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "2b9EkJ3_DvbM$YbgYOKVq7",
+    "name": "Acero",
+    "type": "IfcBuildingElementPart",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "01$AbOE03Hi_ZyogaMYhcS",
+    "name": "Hierro",
+    "type": "IfcBuildingElementPart",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "1yRrgMsSGTVFhAsllCcaDn",
+    "name": "Acero - Estructural",
+    "type": "IfcBuildingElementPart",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "3_OoK4EHszdB_Hf06W82i3",
+    "name": "Acero - Estructural",
+    "type": "IfcBuildingElementPart",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "2El3HstPxaZxAskLmkex1u",
+    "name": "Acero - Estructural",
+    "type": "IfcBuildingElementPart",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "0tA7bHM5RuzeXNPPDcb$Tg",
+    "name": "Madera - Estructural",
+    "type": "IfcBuildingElementPart",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "1dHx_NCqqxd3ucFfWHSzqP",
+    "name": "Acero - Estructural",
+    "type": "IfcBuildingElementPart",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "0ANxYAmopGfqn16Mo74NEV",
+    "name": "Acero",
+    "type": "IfcBuildingElementPart",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "0Cz_UHmKw_tI3Ia_z61XdP",
+    "name": "Hierro",
+    "type": "IfcBuildingElementPart",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "1EyNs4iek3gvONpvgtZB$d",
+    "name": "Acero - Estructural",
+    "type": "IfcBuildingElementPart",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "37NGHFxfXLGj6m0WiWJggQ",
+    "name": "Acero - Estructural",
+    "type": "IfcBuildingElementPart",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "1MiYsViUiqIQLenwk8wedM",
+    "name": "Acero - Estructural",
+    "type": "IfcBuildingElementPart",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "00zOZdG0YZRV9YH1CljhA1",
+    "name": "Acero - Estructural",
+    "type": "IfcBuildingElementPart",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "08g81dXi7DK9Ltte91EgO2",
+    "name": "Acero - Estructural",
+    "type": "IfcBuildingElementPart",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "13Ld8PPJwJ9r0ZT$rpd_lA",
+    "name": "Acero - Estructural",
+    "type": "IfcBuildingElementPart",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "0_32MI$dVWneyQiDrzjBwp",
+    "name": "Madera - Estructural",
+    "type": "IfcBuildingElementPart",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "0QEtJMatC61WnGoEe6yOHr",
+    "name": "Acero",
+    "type": "IfcBuildingElementPart",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "0vyRee$P33a7T_46_jniNc",
+    "name": "Acero - Estructural",
+    "type": "IfcBuildingElementPart",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "0jywCBGexkZZo4nU6ztShV",
+    "name": "Hierro",
+    "type": "IfcBuildingElementPart",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "2mB5xsmkt7$qBI6t4B29QA",
+    "name": "Acero - Estructural",
+    "type": "IfcBuildingElementPart",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "2GM8cS3RnP7Vta3ds_oGre",
+    "name": "Acero - Estructural",
+    "type": "IfcBuildingElementPart",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "1sPN_uahYKtdhdSSI7R_6K",
+    "name": "Acero - Estructural",
+    "type": "IfcBuildingElementPart",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "0gF3r0JjkkGzaLQ7kEhpZ6",
+    "name": "Acero - Estructural",
+    "type": "IfcBuildingElementPart",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "2YCZMCQMQVUYddYnQ6Fg81",
+    "name": "Acero",
+    "type": "IfcBuildingElementPart",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "3lSSzORyyd3sL9$io9bolw",
+    "name": "Acero",
+    "type": "IfcBuildingElementPart",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "21OR3NcnulHn1kkkJC6XoO",
+    "name": "Hormigón Armado - Prefabricado",
+    "type": "IfcBuildingElementPart",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "0wlT4WsjKFRw6Qiay$3Hc9",
+    "name": "Acero - Estructural",
+    "type": "IfcBuildingElementPart",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "2nGYW3UQTpfeZSq6vlQCkv",
+    "name": "Madera - Pavimento",
+    "type": "IfcBuildingElementPart",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "19h5xM6gwHm42d19Ne5aJz",
+    "name": "Madera - Pavimento",
+    "type": "IfcBuildingElementPart",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "0niZV6z50Jd0Uhhntrx2qX",
+    "name": "Acero - Estructural",
+    "type": "IfcBuildingElementPart",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "1DhufxNcZAEnxBuoecShuw",
+    "name": "Madera - Pavimento",
+    "type": "IfcBuildingElementPart",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "1GKGmjYd8g_ynO$rbciNYt",
+    "name": "Madera - Pavimento",
+    "type": "IfcBuildingElementPart",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "3GrOg35Gt3nVBII1NjwWjT",
+    "name": "Madera - Pavimento",
+    "type": "IfcBuildingElementPart",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "3B5PvDnehhHsfi4_2k1Onz",
+    "name": "Acero",
+    "type": "IfcBuildingElementPart",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "0GdnFxtzpdVGFzZvFWwK68",
+    "name": "Madera - Pavimento",
+    "type": "IfcBuildingElementPart",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "2VZURGY5$htM6$GsWhNQdZ",
+    "name": "Madera - Pavimento",
+    "type": "IfcBuildingElementPart",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "0Y5cCOWRCBJGX9kiH_JqA$",
+    "name": "Madera - Pavimento",
+    "type": "IfcBuildingElementPart",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "2JsCI4A$uJWoGF2rQ3iTBQ",
+    "name": "Madera - Pavimento",
+    "type": "IfcBuildingElementPart",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "1dWJcNjVOqvqVHx2T9ttsd",
+    "name": "Madera - Pavimento",
+    "type": "IfcBuildingElementPart",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "2QQrqEwrIu2a3e9Hbukmco",
+    "name": "Madera - Pavimento",
+    "type": "IfcBuildingElementPart",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "1bdHX4bqdyYfOqmCS27NlU",
+    "name": "Madera - Pavimento",
+    "type": "IfcBuildingElementPart",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "3TXDM8IrYJJL3a1osbQtWX",
+    "name": "Madera - Pavimento",
+    "type": "IfcBuildingElementPart",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "1PPdaAKm_dnJkHMlq0fTz$",
+    "name": "Madera - Pavimento",
+    "type": "IfcBuildingElementPart",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "2ip4Qya2DpamgU1tPkZJkG",
+    "name": "Madera - Pavimento",
+    "type": "IfcBuildingElementPart",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "0cfZ9$4qIKqoemI$HVHfx2",
+    "name": "Madera - Pavimento",
+    "type": "IfcBuildingElementPart",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "1TIX__RTDLe3dvOQL8zWAR",
+    "name": "Madera - Pavimento",
+    "type": "IfcBuildingElementPart",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "2YCNSfJjmchN2howJqqtCG",
+    "name": "Acero - Estructural",
+    "type": "IfcBuildingElementPart",
+    "storey": "Segundo piso"
+  },
+  {
+    "guid": "2jfiRVwfWKRd$T46uekXPS",
+    "name": "Acero - Estructural",
+    "type": "IfcBuildingElementPart",
+    "storey": "Segundo piso"
+  },
+  {
+    "guid": "0Us3zd7xhGUWZHRiAg2por",
+    "name": "Acero",
+    "type": "IfcBuildingElementPart",
+    "storey": "Segundo piso"
+  },
+  {
+    "guid": "2s37uGptX_Z7AMQKFkX$8s",
+    "name": "Madera - Estructural",
+    "type": "IfcBuildingElementPart",
+    "storey": "Segundo piso"
+  },
+  {
+    "guid": "3lh9lQSoxLBya_5rnv1EWy",
+    "name": "Acero",
+    "type": "IfcBuildingElementPart",
+    "storey": "Segundo piso"
+  },
+  {
+    "guid": "0QXZrVCs8a2RGvuByaWQf7",
+    "name": "Madera - Estructural",
+    "type": "IfcBuildingElementPart",
+    "storey": "Segundo piso"
+  },
+  {
+    "guid": "2XpUCLxmsd3VLPsVB3MV9y",
+    "name": "Acero - Estructural",
+    "type": "IfcBuildingElementPart",
+    "storey": "Segundo piso"
+  },
+  {
+    "guid": "3uhUKGJGkGyVBrZcHBGzDM",
+    "name": "Acero - Estructural",
+    "type": "IfcBuildingElementPart",
+    "storey": "Segundo piso"
+  },
+  {
+    "guid": "2ir00JLBydmFCK_DHhzy45",
+    "name": "Acero - Estructural",
+    "type": "IfcBuildingElementPart",
+    "storey": "Segundo piso"
+  },
+  {
+    "guid": "3KXx7cYDeuzptLCdC_GNEf",
+    "name": "Hierro",
+    "type": "IfcBuildingElementPart",
+    "storey": "Segundo piso"
+  },
+  {
+    "guid": "2JrJf33BVBuyBl7p8c9nh_",
+    "name": "Acero - Estructural",
+    "type": "IfcBuildingElementPart",
+    "storey": "Segundo piso"
+  },
+  {
+    "guid": "0uCwmUAqp0_UUNOgwFSf3H",
+    "name": "Acero - Estructural",
+    "type": "IfcBuildingElementPart",
+    "storey": "Segundo piso"
+  },
+  {
+    "guid": "3WUqL71FKMSGKfdC4k_LdT",
+    "name": "Acero",
+    "type": "IfcBuildingElementPart",
+    "storey": "Segundo piso"
+  },
+  {
+    "guid": "02pnpXwIO1D3A1defU3rND",
+    "name": "Hierro",
+    "type": "IfcBuildingElementPart",
+    "storey": "Segundo piso"
+  },
+  {
+    "guid": "1ZEYt3STeH_qHM8w4mSZFC",
+    "name": "Acero - Estructural",
+    "type": "IfcBuildingElementPart",
+    "storey": "Segundo piso"
+  },
+  {
+    "guid": "2aZy1ICVbKtLtUMoeHO1Dn",
+    "name": "Acero - Estructural",
+    "type": "IfcBuildingElementPart",
+    "storey": "Segundo piso"
+  },
+  {
+    "guid": "1Y35LC6vtN$4BjC5QwkvgQ",
+    "name": "Acero - Estructural",
+    "type": "IfcBuildingElementPart",
+    "storey": "Segundo piso"
+  },
+  {
+    "guid": "2mIWluUCo9CXgxAluA5aZo",
+    "name": "Acero - Estructural",
+    "type": "IfcBuildingElementPart",
+    "storey": "Segundo piso"
+  },
+  {
+    "guid": "1FWUy$IkDa79h$2M4TsJlr",
+    "name": "GENÉRICO - MEMBRANA EXTENDIDA",
+    "type": "IfcBuildingElementPart",
+    "storey": "Segundo piso"
+  },
+  {
+    "guid": "0RHqsCVU6zZx4qt2iu$dlo",
+    "name": "Madera - Estructural",
+    "type": "IfcBuildingElementPart",
+    "storey": "Segundo piso"
+  },
+  {
+    "guid": "1Y_KDvMKU$B4JjDASTEV3O",
+    "name": "GENÉRICO - PREFABRICADO",
+    "type": "IfcBuildingElementPart",
+    "storey": "Segundo piso"
+  },
+  {
+    "guid": "3fa1TAm4DuK_YTlQ2Td9Id",
+    "name": "Acero - Estructural",
+    "type": "IfcBuildingElementPart",
+    "storey": "Segundo piso"
+  },
+  {
+    "guid": "3shjPEVsG21RG2MiVQVZm2",
+    "name": "Acero - Estructural",
+    "type": "IfcBuildingElementPart",
+    "storey": "Segundo piso"
+  },
+  {
+    "guid": "0JlIwASdiUNFW1vQoWAWpW",
+    "name": "Acero",
+    "type": "IfcBuildingElementPart",
+    "storey": "Segundo piso"
+  },
+  {
+    "guid": "0061tgest7WzFLWqG8QG85",
+    "name": "Madera - Estructural",
+    "type": "IfcBuildingElementPart",
+    "storey": "Segundo piso"
+  },
+  {
+    "guid": "0SeZddZvqopNQmPz9czjNj",
+    "name": "Acero - Estructural",
+    "type": "IfcBuildingElementPart",
+    "storey": "Segundo piso"
+  },
+  {
+    "guid": "2cnGSi6EIBhwDK7t43bdol",
+    "name": "Madera - Estructural",
+    "type": "IfcBuildingElementPart",
+    "storey": "Segundo piso"
+  },
+  {
+    "guid": "1$qrGHovKTmHDQqv3$IX7m",
+    "name": "Madera - Estructural",
+    "type": "IfcBuildingElementPart",
+    "storey": "Segundo piso"
+  },
+  {
+    "guid": "0Wo7xc_HioBd2BaSC_wsRH",
+    "name": "Acero",
+    "type": "IfcBuildingElementPart",
+    "storey": "Segundo piso"
+  },
+  {
+    "guid": "2Atg5nJnz1r5$gGubRTFSB",
+    "name": "Acero",
+    "type": "IfcBuildingElementPart",
+    "storey": "Segundo piso"
+  },
+  {
+    "guid": "1smAA2V15dVCQ$H1bTDEfm",
+    "name": "Acero - Estructural",
+    "type": "IfcBuildingElementPart",
+    "storey": "Segundo piso"
+  },
+  {
+    "guid": "18oaEE$ZYb9_FlVeJgZRRZ",
+    "name": "Acero - Estructural",
+    "type": "IfcBuildingElementPart",
+    "storey": "Segundo piso"
+  },
+  {
+    "guid": "3z2LF3RWnuLAxppWfZbid$",
+    "name": "Acero - Estructural",
+    "type": "IfcBuildingElementPart",
+    "storey": "Segundo piso"
+  },
+  {
+    "guid": "11sD3LeqNs5I8cDQaoDTHV",
+    "name": "Hierro",
+    "type": "IfcBuildingElementPart",
+    "storey": "Segundo piso"
+  },
+  {
+    "guid": "1V749O5HMWX3mv1JdqCMCB",
+    "name": "Acero",
+    "type": "IfcBuildingElementPart",
+    "storey": "Segundo piso"
+  },
+  {
+    "guid": "1S6PXumaIHTpGI9dBFywUT",
+    "name": "Madera - Estructural",
+    "type": "IfcBuildingElementPart",
+    "storey": "Segundo piso"
+  },
+  {
+    "guid": "33eekf6okAcvlnsfsxkCsf",
+    "name": "Acero - Estructural",
+    "type": "IfcBuildingElementPart",
+    "storey": "Segundo piso"
+  },
+  {
+    "guid": "2kcdkujQPWO_Tp15APwGoA",
+    "name": "Acero - Estructural",
+    "type": "IfcBuildingElementPart",
+    "storey": "Segundo piso"
+  },
+  {
+    "guid": "0CQh2zRejUl$RdqF2O0FJi",
+    "name": "Acero",
+    "type": "IfcBuildingElementPart",
+    "storey": "Segundo piso"
+  },
+  {
+    "guid": "0RxPC2WA5sBuwJRgimVVFe",
+    "name": "Madera - Estructural",
+    "type": "IfcBuildingElementPart",
+    "storey": "Segundo piso"
+  },
+  {
+    "guid": "2QIGfhTXkSvk8luI9ccgrr",
+    "name": "Madera - Estructural",
+    "type": "IfcBuildingElementPart",
+    "storey": "Segundo piso"
+  },
+  {
+    "guid": "2Tfuhoyvl7YMrWM_wmtoEC",
+    "name": "Acero",
+    "type": "IfcBuildingElementPart",
+    "storey": "Segundo piso"
+  },
+  {
+    "guid": "18Yt4eInxA8ZDsef7CyNRf",
+    "name": "Acero - Estructural",
+    "type": "IfcBuildingElementPart",
+    "storey": "Segundo piso"
+  },
+  {
+    "guid": "2KOc4Q1Nfq42k7MIcyFgSy",
+    "name": "Hierro",
+    "type": "IfcBuildingElementPart",
+    "storey": "Segundo piso"
+  },
+  {
+    "guid": "1AVCtQ3Uk2euF8Knsn4XjQ",
+    "name": "Acero - Estructural",
+    "type": "IfcBuildingElementPart",
+    "storey": "Segundo piso"
+  },
+  {
+    "guid": "2r8NwCssfdDMeLmxwS6ckz",
+    "name": "Acero - Estructural",
+    "type": "IfcBuildingElementPart",
+    "storey": "Segundo piso"
+  },
+  {
+    "guid": "3RTiy$POPB8wrfHMljVeBx",
+    "name": "FORMA-004",
+    "type": "IfcBuildingElementProxy",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "1swLYcyfj8a8jiqnpx1aP$",
+    "name": "FORMA-009",
+    "type": "IfcBuildingElementProxy",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "1J7r1Uel5ElvSw4EIeTNYY",
+    "name": "FU - 021",
+    "type": "IfcBuildingElementProxy",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "2qOtv64af52vHIc1vedTKZ",
+    "name": "FU - 021",
+    "type": "IfcBuildingElementProxy",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "06GuNhaCvBexe4X3ljW5ZW",
+    "name": "Pilar-003",
+    "type": "IfcColumn",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "2p0sy3N0L1KwIrACdi_yc7",
+    "name": "Pilar-003",
+    "type": "IfcColumn",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "0P5_ht2UHEUxLXABHoGCTJ",
+    "name": "Pilar-001",
+    "type": "IfcColumn",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "0HyhFkoP5BmB7zCit611Lp",
+    "name": "Pilar-001",
+    "type": "IfcColumn",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "0e3AuXPnj3wBYxYVKJBXKd",
+    "name": "Pilar-001",
+    "type": "IfcColumn",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "074$c5uE1D8fyUuVQY8RcA",
+    "name": "Pilar-001",
+    "type": "IfcColumn",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "03SJFfLE531O4XNqzCzgtO",
+    "name": "Pilar-001",
+    "type": "IfcColumn",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "35fpRaycXC98g89e$iqJMs",
+    "name": "Pilar-001",
+    "type": "IfcColumn",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "1z09nnmxH2RgaSVske7Aud",
+    "name": "Pilar-001",
+    "type": "IfcColumn",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "0UzAxQ3vD9ZOdRhnjh_O_t",
+    "name": "Pilar-001",
+    "type": "IfcColumn",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "2wEWscVlbFCwh4Baojw921",
+    "name": "Pilar-001",
+    "type": "IfcColumn",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "22s8Q2iazAGQJxH2$kuyMC",
+    "name": "Pilar-001",
+    "type": "IfcColumn",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "2Cg3mHraX83xHuz85eS0WY",
+    "name": "Pilar-001",
+    "type": "IfcColumn",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "0PmQ_mUhT3gBLKwWyzf61s",
+    "name": "Pilar-001",
+    "type": "IfcColumn",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "2T$xNj$w1FngsrJNuWUTy3",
+    "name": "Pilar-001",
+    "type": "IfcColumn",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "1dprxD8Ij0ewDCmmvQJBqn",
+    "name": "Pilar-001",
+    "type": "IfcColumn",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "3t_l3HqJzCPvWIS9c2A2Nh",
+    "name": "Pilar-001",
+    "type": "IfcColumn",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "0vvhS1OkH4W91$OOVJHRo1",
+    "name": "Pilar-001",
+    "type": "IfcColumn",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "103jedgyPA2P7r1kU1rRvb",
+    "name": "Pilar-001",
+    "type": "IfcColumn",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "01DzqBOWf8Vv19LRI8gTjb",
+    "name": "Pilar-003",
+    "type": "IfcColumn",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "0SjiRdOfPAgxwCbFeSoAwd",
+    "name": "Pilar-003",
+    "type": "IfcColumn",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "1S6hp8G0j3uQBeE78sNIdp",
+    "name": "Pilar-003",
+    "type": "IfcColumn",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "3pRywzKmDArvEcXJdhmS3j",
+    "name": "Pilar-003",
+    "type": "IfcColumn",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "1AXwFUwhXCDvkp8$hQ4i$6",
+    "name": "P - 009",
+    "type": "IfcDoor",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "1Dc4g8_Pr3Jg8HpR08kTbp",
+    "name": "P - 009",
+    "type": "IfcDoor",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "2NkG2uxOL6Xgrjn3MLBkCp",
+    "name": "P - 002",
+    "type": "IfcDoor",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "2RJDj_GMPFifyAq7yteGXh",
+    "name": "P - 006",
+    "type": "IfcDoor",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "10RhpAmx15Ggy0Spk7jjO1",
+    "name": "P - 007",
+    "type": "IfcDoor",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "0ubzEELDXBcPEwzFfR9B_g",
+    "name": "P - 003",
+    "type": "IfcDoor",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "0sPx$iZIrCZA5LbIjimiDZ",
+    "name": "P - 004",
+    "type": "IfcDoor",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "240zAHS7T9ARvLCqd1deLh",
+    "name": "P - 005",
+    "type": "IfcDoor",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "1p2MVQ9KP3wQiSE4bMubgU",
+    "name": "P - 002",
+    "type": "IfcDoor",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "2LFmpay_L2_91rcD0_NsbU",
+    "name": "P - 010",
+    "type": "IfcDoor",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "0rrNzEKr50ugyhrhOqHaGu",
+    "name": "P - 009",
+    "type": "IfcDoor",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "0CLZ8J2hP569qQ$kJhmpo0",
+    "name": "P - 009",
+    "type": "IfcDoor",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "0mQ3jo_N57NggIX89Tx7Ei",
+    "name": "P - 009",
+    "type": "IfcDoor",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "221OZwz0bDpgDMBA_aRTnC",
+    "name": "P - 009",
+    "type": "IfcDoor",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "3wqk8tlg1ARekCXqrDzm$I",
+    "name": "P - 009",
+    "type": "IfcDoor",
+    "storey": "Segundo piso"
+  },
+  {
+    "guid": "35_64nTCH2yx1f2rDD6lOT",
+    "name": "P - 009",
+    "type": "IfcDoor",
+    "storey": "Segundo piso"
+  },
+  {
+    "guid": "0_YesryjPCWhxUpABupmSs",
+    "name": "P - 006",
+    "type": "IfcDoor",
+    "storey": "Segundo piso"
+  },
+  {
+    "guid": "3iTYN4hF9E4hUv$8nubcOo",
+    "name": "P - 006",
+    "type": "IfcDoor",
+    "storey": "Segundo piso"
+  },
+  {
+    "guid": "2qJfax7YHFZPF2fpvCWaYA",
+    "name": "P - 005",
+    "type": "IfcDoor",
+    "storey": "Segundo piso"
+  },
+  {
+    "guid": "1tL0mSkSH2yR$IgqiRYCUU",
+    "name": "P - 007",
+    "type": "IfcDoor",
+    "storey": "Segundo piso"
+  },
+  {
+    "guid": "3I1Ir7jAnA6xsAKdaEd8aN",
+    "name": "BARANDILLA - 005",
+    "type": "IfcRailing",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "38HqNYnGLDY91VH$QUItPy",
+    "name": "BARANDILLA - 007",
+    "type": "IfcRailing",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "1EG$DuX3LAF8uDrDWyXb0j",
+    "name": "BARANDILLA - 001",
+    "type": "IfcRailing",
+    "storey": "Segundo piso"
+  },
+  {
+    "guid": "1i4Yv2V7f9Zx2E2sBVwtvM",
+    "name": "BARANDILLA - 001",
+    "type": "IfcRailing",
+    "storey": "Segundo piso"
+  },
+  {
+    "guid": "3NpLyi$vn3xuG9zCJ6xjBU",
+    "name": "BARANDILLA - 001",
+    "type": "IfcRailing",
+    "storey": "Segundo piso"
+  },
+  {
+    "guid": "2xEQPIEHv1wA36XrDpripT",
+    "name": "CUBIERTA HABITACIONES",
+    "type": "IfcRoof",
+    "storey": "Segundo piso"
+  },
+  {
+    "guid": "1bmfPdal5AZA8DfcGuc4KW",
+    "name": "CUBIERTA TALLER",
+    "type": "IfcRoof",
+    "storey": "Segundo piso"
+  },
+  {
+    "guid": "2uReYjKDnDJuMVPf5xACMk",
+    "name": "CUBIERTA ZONA SOCIAL",
+    "type": "IfcRoof",
+    "storey": "Segundo piso"
+  },
+  {
+    "guid": "3zKYoO99P9Zv1YCIKEpvqw",
+    "name": "CUB - 002",
+    "type": "IfcRoof",
+    "storey": "Segundo piso"
+  },
+  {
+    "guid": "2Yt1NBMfnAVR4$nwsaGH5F",
+    "name": "LOSA CONTRAPISO PRIMER PISO - ACABADO EN ENCHAPE TIPO CONCRETO",
+    "type": "IfcSlab",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "2Xi1ABbPv8WhnFgAtxpw2x",
+    "name": "CONTRAPISO BBQ - ACABADO EN ENCHAPE TIPO MADERA",
+    "type": "IfcSlab",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "0qeom7_FD2yAoiMpzYSX5Y",
+    "name": "PISO TIPO PIEDRA RÚSTICA - FOGATA",
+    "type": "IfcSlab",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "3rPPrT3o11kRBuYGKIXIYl",
+    "name": "CONTRAPISO BBQ - ACABADO EN ENCHAPE TIPO MADERA",
+    "type": "IfcSlab",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "2tBIcaiAnF79ioLJVM4m9o",
+    "name": "CONTRAPISO BBQ - ACABADO EN ENCHAPE TIPO MADERA",
+    "type": "IfcSlab",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "25dSAGuV17swkUCty2pN5D",
+    "name": "LOSA CONTRAPISO EXTERIOR ACCESO- ACABADO EN ENCHAPE TIPO PIEDRA",
+    "type": "IfcSlab",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "2izH9_cczD59u3R2dwmT0t",
+    "name": "LOSA CONTRAPISO ZONA DESAYUNO - ACABADO EN ENCHAPE TIPO CONCRETO",
+    "type": "IfcSlab",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "18gCQ7UTrDkuONEN97SIZy",
+    "name": "VACIADO BASE FOGOTA - ACABADO EN MICROCEMENTO",
+    "type": "IfcSlab",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "06cMe8Oyz8WRzR$8Pv25KE",
+    "name": "LOSA INTERIOR SEGUNDO PISO - ACABADO EN ENCHAPE TIPO CONCRETO",
+    "type": "IfcSlab",
+    "storey": "Segundo piso"
+  },
+  {
+    "guid": "1XgcLklg11V8H6P_kOf6t1",
+    "name": "LOSA ENTREPISO BALCÓN - ACABADO EN ENCHAPE TIPO CONCRETO",
+    "type": "IfcSlab",
+    "storey": "Segundo piso"
+  },
+  {
+    "guid": "2c_yDtVM99F8XmUcj_1bER",
+    "name": "ESCALERA - 002",
+    "type": "IfcStair",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "3zTK86NhX1igVtT9nm7kA7",
+    "name": "MS-056",
+    "type": "IfcWall",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "3XYpt8WA58zByYkPS7yQfJ",
+    "name": "MS-004",
+    "type": "IfcWall",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "0O74eNQpL1f8gyLTNlBmR9",
+    "name": "MS-005",
+    "type": "IfcWall",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "0RnkQ5bG5Cw8S_mUvOBr5E",
+    "name": "MS-006",
+    "type": "IfcWall",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "0mtMC49ozElgFa5NhHffA7",
+    "name": "MS-007",
+    "type": "IfcWall",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "3ftW7RB6vDFQiAkUXWVbNm",
+    "name": "MS-008",
+    "type": "IfcWall",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "0B1HQ4tJr2EPvmXqko47SF",
+    "name": "MS-009",
+    "type": "IfcWall",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "2MZTMtuYjAGAT6Y5qGggKN",
+    "name": "MS-011",
+    "type": "IfcWall",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "3GLe8oIeHEuh3hIcwALrcI",
+    "name": "MS-012",
+    "type": "IfcWall",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "1wclLcodn36BtfLeoX8qKE",
+    "name": "MS-013",
+    "type": "IfcWall",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "1kUYafjcb8rwF0kzLTmv9l",
+    "name": "MS-014",
+    "type": "IfcWall",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "10EXuWz4bCkQeEljXJ5Lhu",
+    "name": "MS-015",
+    "type": "IfcWall",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "1sx3tQ9Qj0JuAKH5yKW5RZ",
+    "name": "MS-016",
+    "type": "IfcWall",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "31xcnwHoX0gAWybCWlKoKF",
+    "name": "MS-018",
+    "type": "IfcWall",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "2Uo_oBBNb8OPfZSd9tpA5f",
+    "name": "MS-019",
+    "type": "IfcWall",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "2h11Ezrp97wfjBWuEeYPjx",
+    "name": "MS-020",
+    "type": "IfcWall",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "2Ol4hFDhbBzOlBxCfuuB8t",
+    "name": "MS-021",
+    "type": "IfcWall",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "3g4TwulSb6xvkI4OrMvn8x",
+    "name": "MS-025",
+    "type": "IfcWall",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "1_yNKaS_X5L9SLTBIM3jTx",
+    "name": "MS-027",
+    "type": "IfcWall",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "1hIu$JdH10WBcrWMGs$aVx",
+    "name": "MS-028",
+    "type": "IfcWall",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "3QWSKji7DCOQ2f2gZemdcK",
+    "name": "MS-029",
+    "type": "IfcWall",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "0hFyXA1BzBF96wp59cTdXc",
+    "name": "MS-030",
+    "type": "IfcWall",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "2pxIVUnwbF3udidAVFJIII",
+    "name": "MS-031",
+    "type": "IfcWall",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "3mJMLNuPP3dRu019r1p7pA",
+    "name": "MS-032",
+    "type": "IfcWall",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "0UalCivZL2E8eos6VNsDBW",
+    "name": "MS-033",
+    "type": "IfcWall",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "0nquOoFaT63htUjBZTCuUw",
+    "name": "MS-034",
+    "type": "IfcWall",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "1ikY5uGz1ElhdEcdolz3d1",
+    "name": "MS-057",
+    "type": "IfcWall",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "2hUXGOY19A9Q3muA$jJ1_h",
+    "name": "MS-029",
+    "type": "IfcWall",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "0iwXMtcZLEkvZcBuqJiMUf",
+    "name": "MS-011",
+    "type": "IfcWall",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "1p7BmgsrjBh8j7pIsVCZBX",
+    "name": "MS-017",
+    "type": "IfcWall",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "0PWLva6v92dRzAYBfxxswF",
+    "name": "MS-060",
+    "type": "IfcWall",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "2GjThpL0r699BNKkIbC1mP",
+    "name": "MS-063",
+    "type": "IfcWall",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "2drWAJOWX9PAIAHSAFuOtW",
+    "name": "MS-028",
+    "type": "IfcWall",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "3STJbv061FLgku_L5MaFyS",
+    "name": "MS-058",
+    "type": "IfcWall",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "0q44RIXPz9mQqOZOnWY4m3",
+    "name": "MS-023",
+    "type": "IfcWall",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "1GNA9baSr2sh9WtlkHQDDU",
+    "name": "MS-043",
+    "type": "IfcWall",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "1MMz6EmNX1KAjX$1zXF5qq",
+    "name": "MS-056",
+    "type": "IfcWall",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "0ZOjWIQD19$ekjjk3IPvSK",
+    "name": "MS-002",
+    "type": "IfcWall",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "1sRInRt_H9KBMMRaaqGxgn",
+    "name": "MS-010",
+    "type": "IfcWall",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "2gYH57R$b0UQQ2vwQ$vDQP",
+    "name": "MS-019",
+    "type": "IfcWall",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "2iwXxfI2550QZ_XDEU2rbX",
+    "name": "MS-010",
+    "type": "IfcWall",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "3IJqWr3lX1j9cS6YEKvZUU",
+    "name": "MS-003",
+    "type": "IfcWall",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "1P3Arfw2n16x69fDrlxlap",
+    "name": "MS-008",
+    "type": "IfcWall",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "33Gex6q8rEeBYC$Yf6U$$A",
+    "name": "MS-004",
+    "type": "IfcWall",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "0Ial42T41EKRMjuUxrr6Yu",
+    "name": "MS-004",
+    "type": "IfcWall",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "2B5xMFVVL4PxlYd0kJi7sR",
+    "name": "MS-004",
+    "type": "IfcWall",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "2o1BK1YLTBlBrNYYeZVann",
+    "name": "MS-021",
+    "type": "IfcWall",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "2tboMrMlP4ehgWuR7yCxX8",
+    "name": "MS-008",
+    "type": "IfcWall",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "3Wumryh6187vAneiYpMoBI",
+    "name": "MS-008",
+    "type": "IfcWall",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "2JU5HQ9Wr0Fgyu_YyObmsX",
+    "name": "MS-008",
+    "type": "IfcWall",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "39ta_7C25E78Gp3Rw2Rq0a",
+    "name": "MS-008",
+    "type": "IfcWall",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "1MqfDEsOXCMA3qqnQ5Ei$7",
+    "name": "MS-008",
+    "type": "IfcWall",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "2kmPizuGf76uRfevolM$Xb",
+    "name": "MS-008",
+    "type": "IfcWall",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "1l8ytKEYDC98I7NFZx55xI",
+    "name": "MS-008",
+    "type": "IfcWall",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "0_V8oABQD2ZQAm6GN4paiY",
+    "name": "MS-021",
+    "type": "IfcWall",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "072512sozFL9jxK0hjbpUe",
+    "name": "MS-008",
+    "type": "IfcWall",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "0gCO5t7oT7wAz8OTskVBIy",
+    "name": "MS-053",
+    "type": "IfcWall",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "1nO6rNQPX3sBKT5a2MUfIq",
+    "name": "MS-062",
+    "type": "IfcWall",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "3fCimfds1DhuEzSSqO83XM",
+    "name": "MS-024",
+    "type": "IfcWall",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "2BcXZhhjb1FAadFwNTSA6c",
+    "name": "MS-044",
+    "type": "IfcWall",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "25tRSlC2902enMSaJynKgR",
+    "name": "MS-045",
+    "type": "IfcWall",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "1qQNskg1n0xBaMNHgQVt2b",
+    "name": "MS-046",
+    "type": "IfcWall",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "2yCbkrNgLFSOzJXfUJcWqV",
+    "name": "MS-048",
+    "type": "IfcWall",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "1KGOiLXov2KwpbY2urZCcu",
+    "name": "MS-046",
+    "type": "IfcWall",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "2dfhowYJf6l9BEod_jV4q9",
+    "name": "MS-045",
+    "type": "IfcWall",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "1AS0VY06bE4fLmqoXaRazr",
+    "name": "MS-054",
+    "type": "IfcWall",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "1paYQJgoXDaRxghwVxFW55",
+    "name": "MS-056",
+    "type": "IfcWall",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "34k2U7JLr33vHFLI_WN0EF",
+    "name": "MS-056",
+    "type": "IfcWall",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "0tTjMvcAT7LQQX6vezLiHK",
+    "name": "MS-057",
+    "type": "IfcWall",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "1GaFaZl7L5QeOjQuFgzYtR",
+    "name": "MS-059",
+    "type": "IfcWall",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "3WWMLSw$P7APSS9DnfoYCx",
+    "name": "MS-060",
+    "type": "IfcWall",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "2i3hePOir3Fe9W4jTgtB$L",
+    "name": "MS-053",
+    "type": "IfcWall",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "1AmfY_MmP1hOUAWupyEGyX",
+    "name": "MS-020 - ENCHAPE BAÑO",
+    "type": "IfcWall",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "37nCU2T51CNvl3lG_hzZfP",
+    "name": "MS-053",
+    "type": "IfcWall",
+    "storey": "Segundo piso"
+  },
+  {
+    "guid": "07CLY7$pD33AtQzgJqhLD2",
+    "name": "MS-043",
+    "type": "IfcWall",
+    "storey": "Segundo piso"
+  },
+  {
+    "guid": "0RoOerFOH21fDchzOJ7l_t",
+    "name": "MS-035",
+    "type": "IfcWall",
+    "storey": "Segundo piso"
+  },
+  {
+    "guid": "09pdb0bgr9QvMPv1cXCh5p",
+    "name": "MS-036",
+    "type": "IfcWall",
+    "storey": "Segundo piso"
+  },
+  {
+    "guid": "0YbxOmlKX1dxWnaKAo_Dj0",
+    "name": "MS-037",
+    "type": "IfcWall",
+    "storey": "Segundo piso"
+  },
+  {
+    "guid": "2uGH$iNRX34wLiUQHpFx28",
+    "name": "MS-038",
+    "type": "IfcWall",
+    "storey": "Segundo piso"
+  },
+  {
+    "guid": "0SnpdIw8HAvx$kHt57KSg8",
+    "name": "MS-043",
+    "type": "IfcWall",
+    "storey": "Segundo piso"
+  },
+  {
+    "guid": "03IpdXLw1DjghOOS9$J3YX",
+    "name": "MS-039",
+    "type": "IfcWall",
+    "storey": "Segundo piso"
+  },
+  {
+    "guid": "1rzqnr4Sv3WxdYldj6dAKK",
+    "name": "MS-046",
+    "type": "IfcWall",
+    "storey": "Segundo piso"
+  },
+  {
+    "guid": "2WQA9GuUH46wlzwUgsVfGC",
+    "name": "MS-048",
+    "type": "IfcWall",
+    "storey": "Segundo piso"
+  },
+  {
+    "guid": "3TgS0aM4HAxRkZlZRLqXyV",
+    "name": "MS-050",
+    "type": "IfcWall",
+    "storey": "Segundo piso"
+  },
+  {
+    "guid": "3eOCTGEHr5sOC4jIMkEWft",
+    "name": "MS-051",
+    "type": "IfcWall",
+    "storey": "Segundo piso"
+  },
+  {
+    "guid": "2ja01nhbvD5f$1n5_ZUnpW",
+    "name": "MS-052",
+    "type": "IfcWall",
+    "storey": "Segundo piso"
+  },
+  {
+    "guid": "1NJpflhJr2pAvI_cnqmpDE",
+    "name": "MS-055",
+    "type": "IfcWall",
+    "storey": "Segundo piso"
+  },
+  {
+    "guid": "3qC0WRNnLEDhx6vxZEQwu9",
+    "name": "MS-043",
+    "type": "IfcWall",
+    "storey": "Segundo piso"
+  },
+  {
+    "guid": "2I9ij8m0D4PPuzW4ys2i07",
+    "name": "MS-044",
+    "type": "IfcWall",
+    "storey": "Segundo piso"
+  },
+  {
+    "guid": "0Xi4SKUCbAuPnfg9A4TJsK",
+    "name": "MS-035",
+    "type": "IfcWall",
+    "storey": "Segundo piso"
+  },
+  {
+    "guid": "126Y$cPvD079AjiJ2umpES",
+    "name": "MS-045",
+    "type": "IfcWall",
+    "storey": "Segundo piso"
+  },
+  {
+    "guid": "1wwbHT5RL8$BMoAnTLPK4R",
+    "name": "MS-055",
+    "type": "IfcWall",
+    "storey": "Segundo piso"
+  },
+  {
+    "guid": "0jMZc82912Eh5XEjkoAZXd",
+    "name": "MS-043",
+    "type": "IfcWall",
+    "storey": "Segundo piso"
+  },
+  {
+    "guid": "06aG4lzcPFSQCTPyAd5T2k",
+    "name": "MS-035",
+    "type": "IfcWall",
+    "storey": "Segundo piso"
+  },
+  {
+    "guid": "07McBe9lj3BeIz9_n21jX4",
+    "name": "MS-052",
+    "type": "IfcWall",
+    "storey": "Segundo piso"
+  },
+  {
+    "guid": "2nuGN5WdX7HOQVW1GxI5Ve",
+    "name": "MS-052",
+    "type": "IfcWall",
+    "storey": "Segundo piso"
+  },
+  {
+    "guid": "2__0tp5Yv5C8aL2dYmPJn$",
+    "name": "MS-039",
+    "type": "IfcWall",
+    "storey": "Segundo piso"
+  },
+  {
+    "guid": "1bC1JMNSj33wHowdGtsp3k",
+    "name": "MS-056",
+    "type": "IfcWall",
+    "storey": "Segundo piso"
+  },
+  {
+    "guid": "3enpsjRbD8n9618$HKh$SL",
+    "name": "MS-052",
+    "type": "IfcWall",
+    "storey": "Segundo piso"
+  },
+  {
+    "guid": "2GkjlCoer9kevLDcXa2U$C",
+    "name": "MS-053",
+    "type": "IfcWall",
+    "storey": "Segundo piso"
+  },
+  {
+    "guid": "2B2i$ZgAHAsBD2DO_TRper",
+    "name": "MS-045",
+    "type": "IfcWall",
+    "storey": "Segundo piso"
+  },
+  {
+    "guid": "0O6pS0cq9C3O3_PwilHax4",
+    "name": "MS-035",
+    "type": "IfcWall",
+    "storey": "Segundo piso"
+  },
+  {
+    "guid": "3QCiYXvF17aAyZftkaYx_e",
+    "name": "MS-039",
+    "type": "IfcWall",
+    "storey": "Segundo piso"
+  },
+  {
+    "guid": "0bAKbH1j94ZPOUBgD_vHSf",
+    "name": "MS-043",
+    "type": "IfcWall",
+    "storey": "Segundo piso"
+  },
+  {
+    "guid": "2_CFyfBWL0kxY7Zu26ZK3p",
+    "name": "MS-035",
+    "type": "IfcWall",
+    "storey": "Segundo piso"
+  },
+  {
+    "guid": "3DMiV9Q090D9$ikRZGzQAs",
+    "name": "MS-049",
+    "type": "IfcWall",
+    "storey": "Segundo piso"
+  },
+  {
+    "guid": "2wxOu7JUv3ZuCd6o$JVv1Q",
+    "name": "MS-050",
+    "type": "IfcWall",
+    "storey": "Segundo piso"
+  },
+  {
+    "guid": "1Dx93IXVT52PcSLolR9MHz",
+    "name": "MS-051",
+    "type": "IfcWall",
+    "storey": "Segundo piso"
+  },
+  {
+    "guid": "2fUV2FsH50Tv1sbfN48ukF",
+    "name": "MS-008",
+    "type": "IfcWall",
+    "storey": "Segundo piso"
+  },
+  {
+    "guid": "1uugX_bs10VQTsoiHHtRtB",
+    "name": "MS-043",
+    "type": "IfcWall",
+    "storey": "Segundo piso"
+  },
+  {
+    "guid": "0xCWNVIrj57Q9WDcNTvVjY",
+    "name": "MS-056",
+    "type": "IfcWall",
+    "storey": "Segundo piso"
+  },
+  {
+    "guid": "3AeAUbXCn86eIMHjkBz3lX",
+    "name": "MS-055",
+    "type": "IfcWall",
+    "storey": "Segundo piso"
+  },
+  {
+    "guid": "3OVnfzxfL14OGOBYlInPR$",
+    "name": "MS-052",
+    "type": "IfcWall",
+    "storey": "Segundo piso"
+  },
+  {
+    "guid": "2f4Goob3H70xhuZFLupB64",
+    "name": "MS-052",
+    "type": "IfcWall",
+    "storey": "Segundo piso"
+  },
+  {
+    "guid": "1e7ZEd5ATE_RDlGsKOL1mZ",
+    "name": "MS-042",
+    "type": "IfcWall",
+    "storey": "Nivel ático"
+  },
+  {
+    "guid": "1ABefYZ1zEEeFkJsZlXqNU",
+    "name": "MS-042",
+    "type": "IfcWall",
+    "storey": "Nivel ático"
+  },
+  {
+    "guid": "32i4bBZdz7WvmMiKSyKBfJ",
+    "name": "MS-045",
+    "type": "IfcWall",
+    "storey": "Nivel ático"
+  },
+  {
+    "guid": "264f58OjbCg8aQL0VGx1Dw",
+    "name": "MS-041",
+    "type": "IfcWall",
+    "storey": "Nivel ático"
+  },
+  {
+    "guid": "0xOJZ26aTEx9LZD9dskS42",
+    "name": "MS-040",
+    "type": "IfcWall",
+    "storey": "Nivel ático"
+  },
+  {
+    "guid": "0gmOgxCHz64fnHT_$Q3uGW",
+    "name": "MS-046",
+    "type": "IfcWall",
+    "storey": "Nivel ático"
+  },
+  {
+    "guid": "2ujFrJFA56r9fzJlLFcpPh",
+    "name": "MS-045",
+    "type": "IfcWall",
+    "storey": "Nivel ático"
+  },
+  {
+    "guid": "0fRAT_1s92xee823EXJrVn",
+    "name": "MS-047",
+    "type": "IfcWall",
+    "storey": "Nivel ático"
+  },
+  {
+    "guid": "28Rxi7iuDEOR1CbQkEWTQQ",
+    "name": "MS-048",
+    "type": "IfcWall",
+    "storey": "Nivel ático"
+  },
+  {
+    "guid": "3fWvf2kD54ovffSPigO2D4",
+    "name": "MS-049",
+    "type": "IfcWall",
+    "storey": "Nivel ático"
+  },
+  {
+    "guid": "3aGksLyjbEbRf_XKrpJ97E",
+    "name": "MS-050",
+    "type": "IfcWall",
+    "storey": "Nivel ático"
+  },
+  {
+    "guid": "3yqHpnSWrCoQLHyBx4yk3k",
+    "name": "MS-056",
+    "type": "IfcWall",
+    "storey": "Nivel ático"
+  },
+  {
+    "guid": "1EvHE_KXP0XgntdatGARhU",
+    "name": "MS-057",
+    "type": "IfcWall",
+    "storey": "Nivel ático"
+  },
+  {
+    "guid": "3P4Tko3p9BW8hgUpbxgfOB",
+    "name": "MS-058",
+    "type": "IfcWall",
+    "storey": "Nivel ático"
+  },
+  {
+    "guid": "31JkI0tdPE0P2qSkyIPScE",
+    "name": "MS-059",
+    "type": "IfcWall",
+    "storey": "Nivel ático"
+  },
+  {
+    "guid": "1rOebeiy151Owj8NscPj40",
+    "name": "MS-051",
+    "type": "IfcWall",
+    "storey": "Nivel ático"
+  },
+  {
+    "guid": "2gTfb$nNfE7grGie3$UAcI",
+    "name": "MS-044",
+    "type": "IfcWall",
+    "storey": "Nivel ático"
+  },
+  {
+    "guid": "36vkfzSi125hFFl3hl9FwS",
+    "name": "MS-042",
+    "type": "IfcWall",
+    "storey": "Nivel ático"
+  },
+  {
+    "guid": "1fFT6c61zCfQ2waS_YnKKg",
+    "name": "MS-042",
+    "type": "IfcWall",
+    "storey": "Nivel ático"
+  },
+  {
+    "guid": "20F6GWv5TE1ewzZopiBlKy",
+    "name": "MS-059",
+    "type": "IfcWall",
+    "storey": "Nivel ático"
+  },
+  {
+    "guid": "1lYBX38nn1$eWObSOgXDqA",
+    "name": "MS-051",
+    "type": "IfcWall",
+    "storey": "Nivel ático"
+  },
+  {
+    "guid": "1FTVJhfizCTONE9gTIX8pq",
+    "name": "V - 001",
+    "type": "IfcWindow",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "1S7EFHmzfDhOTf42kdJzVN",
+    "name": "V - 002",
+    "type": "IfcWindow",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "32L1rJDkT19h3$vMFdNWoV",
+    "name": "V - 001",
+    "type": "IfcWindow",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "3af7_I0XH8DvueJ0gNrgMJ",
+    "name": "V - 002",
+    "type": "IfcWindow",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "0kW9QRrF1CPuU8F0VX7nIb",
+    "name": "V - 002",
+    "type": "IfcWindow",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "0dx_Bfd3z09RazWx0GEtCi",
+    "name": "V - 002",
+    "type": "IfcWindow",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "0z9_xdecX9nONgm$x99GMB",
+    "name": "V - 001",
+    "type": "IfcWindow",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "0wwT7NqaD46PjYUhbhUpqx",
+    "name": "V - 001",
+    "type": "IfcWindow",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "10REP2h1TF5hd2WbuG_bfD",
+    "name": "V - 001",
+    "type": "IfcWindow",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "0hXBctdbP4gxBaq4O1XDl2",
+    "name": "V - 001",
+    "type": "IfcWindow",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "2oC2atHJD6pewXFSbISjur",
+    "name": "V - 001",
+    "type": "IfcWindow",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "1VqIlGb2n9A9Z5oYVV9u5n",
+    "name": "V - 001",
+    "type": "IfcWindow",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "1H1rZI5Mf6xAqP3Ruw15EE",
+    "name": "V - 001",
+    "type": "IfcWindow",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "2MIIg8KHDAe97DzBpKcQqs",
+    "name": "V - 001",
+    "type": "IfcWindow",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "0$VFtUdU91VeqF6JUsumdv",
+    "name": "V - 001",
+    "type": "IfcWindow",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "0s41qF8_v7ifoUvzDT_UEK",
+    "name": "V - 001",
+    "type": "IfcWindow",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "1NReKLqaf7Ew6WgWSb$KFk",
+    "name": "V - 003",
+    "type": "IfcWindow",
+    "storey": "Segundo piso"
+  },
+  {
+    "guid": "2XzNLvbl109P_eAWQf20tu",
+    "name": "V - 003",
+    "type": "IfcWindow",
+    "storey": "Segundo piso"
+  },
+  {
+    "guid": "17ukVH0NT4wf4O7NGAC3Yd",
+    "name": "V - 003",
+    "type": "IfcWindow",
+    "storey": "Segundo piso"
+  },
+  {
+    "guid": "1qiKbv6BP588L0aI9kA8LU",
+    "name": "V - 003",
+    "type": "IfcWindow",
+    "storey": "Segundo piso"
+  },
+  {
+    "guid": "0lnVvmPd99wgJEZ$iQFuYy",
+    "name": "V - 002",
+    "type": "IfcWindow",
+    "storey": "Segundo piso"
+  },
+  {
+    "guid": "1Yl9yNKfv6ORxjHDJH_hJa",
+    "name": "V - 002",
+    "type": "IfcWindow",
+    "storey": "Segundo piso"
+  },
+  {
+    "guid": "2YNbY8EoD4aO0UL8TAsoBZ",
+    "name": "V - 002",
+    "type": "IfcWindow",
+    "storey": "Segundo piso"
+  },
+  {
+    "guid": "1Mms9rT7D3P8FfdgkQzuDM",
+    "name": "V - 001",
+    "type": "IfcWindow",
+    "storey": "Segundo piso"
+  },
+  {
+    "guid": "2sVXtuCk50cuqoOpGskt6a",
+    "name": "V - 001",
+    "type": "IfcWindow",
+    "storey": "Segundo piso"
+  },
+  {
+    "guid": "06CutVXQ94U82E$RwYfku$",
+    "name": "V - 001",
+    "type": "IfcWindow",
+    "storey": "Segundo piso"
+  },
+  {
+    "guid": "29F0PBwjXDSut259V_w$5e",
+    "name": "V - 002",
+    "type": "IfcWindow",
+    "storey": "Nivel ático"
+  },
+  {
+    "guid": "2YvA9MwHf9he2O3zud8rGo",
+    "name": "V - 003",
+    "type": "IfcWindow",
+    "storey": "Nivel ático"
+  },
+  {
+    "guid": "0Ppd0sAS19nuiZmtFuOJQr",
+    "name": "V - 002",
+    "type": "IfcWindow",
+    "storey": "Nivel ático"
+  },
+  {
+    "guid": "2hcAMqu1H9AB6jFiKOBrLT",
+    "name": "V - 003",
+    "type": "IfcWindow",
+    "storey": "Nivel ático"
+  },
+  {
+    "guid": "3mbK2DQk98BRTEdaDzlBXI",
+    "name": "V - 003",
+    "type": "IfcWindow",
+    "storey": "Nivel ático"
+  },
+  {
+    "guid": "1aYzwVP7z7FubLx8wtsEPu",
+    "name": "FU - 009",
+    "type": "IfcDistributionFlowElement",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "2NyPxRSFj8PPfILx1gc7Hx",
+    "name": "FU - 009",
+    "type": "IfcDistributionFlowElement",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "0Gfupr4vj2ggP4vza8P9MS",
+    "name": "FU - 010",
+    "type": "IfcDistributionFlowElement",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "3l3DRl0l14gB7CTO5W8CLD",
+    "name": "FU - 010",
+    "type": "IfcDistributionFlowElement",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "1D0lm2Hib8Ov1MjrcfciKf",
+    "name": "FU - 011",
+    "type": "IfcDistributionFlowElement",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "2IWO4q2G1EauYsLofnb9vg",
+    "name": "FU - 011",
+    "type": "IfcDistributionFlowElement",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "1ehKZSyEHCye9y1cBssneQ",
+    "name": "FU - 012",
+    "type": "IfcDistributionFlowElement",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "2wv8Yu_Qz7DQ7KEzYlvFEG",
+    "name": "FU - 012",
+    "type": "IfcDistributionFlowElement",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "1QgO9SeJn1XeUtfnF661wC",
+    "name": "FU - 013",
+    "type": "IfcDistributionFlowElement",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "0IuGDthOj8WPIVufAFBrVl",
+    "name": "FU - 013",
+    "type": "IfcDistributionFlowElement",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "1v5idXb8jDohGF$aNtm$MN",
+    "name": "FU - 009",
+    "type": "IfcDistributionFlowElement",
+    "storey": "Segundo piso"
+  },
+  {
+    "guid": "1OQpoQoxjAeBUR4EKgDr8Q",
+    "name": "FU - 010",
+    "type": "IfcDistributionFlowElement",
+    "storey": "Segundo piso"
+  },
+  {
+    "guid": "1IhfE8ep12HOCxIMnC1rUb",
+    "name": "FU - 011",
+    "type": "IfcDistributionFlowElement",
+    "storey": "Segundo piso"
+  },
+  {
+    "guid": "10jnoNRU5EMuWSPj0Tul43",
+    "name": "FU - 018",
+    "type": "IfcDiscreteAccessory",
+    "storey": "Segundo piso"
+  },
+  {
+    "guid": "1SLfyd_XL0MupEKzMxnifp",
+    "name": "FU - 018",
+    "type": "IfcDiscreteAccessory",
+    "storey": "Segundo piso"
+  },
+  {
+    "guid": "0nc91ZpF8xle8QuxqFuor0",
+    "name": "P - 009",
+    "type": "IfcOpeningElement",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "28j0ZNisp4w5vk0APjxEgW",
+    "name": "P - 009",
+    "type": "IfcOpeningElement",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "3eR8sAzI3R9VBGRFmaNoCz",
+    "name": "P - 002",
+    "type": "IfcOpeningElement",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "3C8X1VMW95Xb0P6mWKg2tH",
+    "name": "V - 001",
+    "type": "IfcOpeningElement",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "1oPmLblRclBosYzF$PG2uQ",
+    "name": "V - 002",
+    "type": "IfcOpeningElement",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "3oMJ$06w9HRegvpGai0aDh",
+    "name": "V - 001",
+    "type": "IfcOpeningElement",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "1o69MkZWHi8esgjNqwZEqk",
+    "name": "V - 002",
+    "type": "IfcOpeningElement",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "2eTFt72QTA9GI097rI_Rwn",
+    "name": "V - 002",
+    "type": "IfcOpeningElement",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "0uJB3ETuDXBvJ4sNcPoiUA",
+    "name": "V - 002",
+    "type": "IfcOpeningElement",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "1rr4Vz2fdC9TXq9UO6ufcJ",
+    "name": "V - 001",
+    "type": "IfcOpeningElement",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "2yKsaZJaxNjtgcSzqjaJXy",
+    "name": "V - 001",
+    "type": "IfcOpeningElement",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "3VUTP7JHax0HTIFcp2S0Vs",
+    "name": "P - 006",
+    "type": "IfcOpeningElement",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "2BJMRyw9JKzys8JAKNjXPB",
+    "name": "P - 007",
+    "type": "IfcOpeningElement",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "2EIqnIhpKhvwOqZ6y5HAVT",
+    "name": "P - 003",
+    "type": "IfcOpeningElement",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "1FuqF6D7B7QoKoPQyd_0xZ",
+    "name": "P - 004",
+    "type": "IfcOpeningElement",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "0WbAF7mNaUmoTnVxTwI4KR",
+    "name": "V - 001",
+    "type": "IfcOpeningElement",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "0DFdx2dNDhJLaNZu$uJvTX",
+    "name": "V - 001",
+    "type": "IfcOpeningElement",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "13QM_yM4CHbWm2cOuQW2vA",
+    "name": "P - 005",
+    "type": "IfcOpeningElement",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "1ZR3gNEUi$Jl4tSPXAn7SN",
+    "name": "P - 002",
+    "type": "IfcOpeningElement",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "3A6YvERhKA65UuWSAeamoD",
+    "name": "V - 001",
+    "type": "IfcOpeningElement",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "18U6cIGU34xRkzjnQxIPi1",
+    "name": "V - 001",
+    "type": "IfcOpeningElement",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "3wWlApfc4T5pN_TqVM6a0U",
+    "name": "P - 010",
+    "type": "IfcOpeningElement",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "33in2KP7AwNsoW5tYuNdfa",
+    "name": "V - 001",
+    "type": "IfcOpeningElement",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "1kotHZzvNd51bm1JjZSSnn",
+    "name": "P - 009",
+    "type": "IfcOpeningElement",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "2Z6ORpjMQYd6GXZbrK1Xu7",
+    "name": "P - 009",
+    "type": "IfcOpeningElement",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "2i_Ve7P$7HowkIpWBx0hQw",
+    "name": "V - 001",
+    "type": "IfcOpeningElement",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "2ou_4FXh5AFb9c1Et1xBRo",
+    "name": "V - 001",
+    "type": "IfcOpeningElement",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "0gg6H01ZrLQA129Y7KXK4M",
+    "name": "P - 009",
+    "type": "IfcOpeningElement",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "3HMCyHkuXiWzyeaVAUA8lV",
+    "name": "V - 001",
+    "type": "IfcOpeningElement",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "0CPmXBarPO8XH3VepaheeL",
+    "name": "P - 009",
+    "type": "IfcOpeningElement",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "0c5jx_PTib2k2LtRrQfAa4",
+    "name": "P - 009",
+    "type": "IfcOpeningElement",
+    "storey": "Segundo piso"
+  },
+  {
+    "guid": "3e5JMbnkVNsr5QUACUjEWw",
+    "name": "P - 006",
+    "type": "IfcOpeningElement",
+    "storey": "Segundo piso"
+  },
+  {
+    "guid": "2T97vbPD8v0zoGTuuxpzuW",
+    "name": "P - 006",
+    "type": "IfcOpeningElement",
+    "storey": "Segundo piso"
+  },
+  {
+    "guid": "3HEbedvaiM26mI2wCzTllm",
+    "name": "P - 005",
+    "type": "IfcOpeningElement",
+    "storey": "Segundo piso"
+  },
+  {
+    "guid": "1PKotpVXAftIGGSVvP6l$e",
+    "name": "V - 003",
+    "type": "IfcOpeningElement",
+    "storey": "Segundo piso"
+  },
+  {
+    "guid": "3w_psmYGnxM0DBWF217NgX",
+    "name": "P - 009",
+    "type": "IfcOpeningElement",
+    "storey": "Segundo piso"
+  },
+  {
+    "guid": "1bnLz6S9O60nAnGIHZCFW2",
+    "name": "V - 003",
+    "type": "IfcOpeningElement",
+    "storey": "Segundo piso"
+  },
+  {
+    "guid": "01mVzq1fqANTgtmcdTm6FV",
+    "name": "V - 003",
+    "type": "IfcOpeningElement",
+    "storey": "Segundo piso"
+  },
+  {
+    "guid": "3KJGl4n7uL2Dvwk_3Ks_FE",
+    "name": "V - 003",
+    "type": "IfcOpeningElement",
+    "storey": "Segundo piso"
+  },
+  {
+    "guid": "03Y1WMMZRgCmqZ$dB0lsNm",
+    "name": "V - 002",
+    "type": "IfcOpeningElement",
+    "storey": "Segundo piso"
+  },
+  {
+    "guid": "3q5YsuofY9aoTV6hdCGj3$",
+    "name": "V - 002",
+    "type": "IfcOpeningElement",
+    "storey": "Segundo piso"
+  },
+  {
+    "guid": "3FPBU_CJ7RJ8G0kjtq6Jpm",
+    "name": "V - 002",
+    "type": "IfcOpeningElement",
+    "storey": "Segundo piso"
+  },
+  {
+    "guid": "0VELdxuy6qYSYQK_hxF9Yi",
+    "name": "V - 001",
+    "type": "IfcOpeningElement",
+    "storey": "Segundo piso"
+  },
+  {
+    "guid": "07MxH1UFDjelG4jkbc3H3o",
+    "name": "V - 001",
+    "type": "IfcOpeningElement",
+    "storey": "Segundo piso"
+  },
+  {
+    "guid": "17AcQMzd8fXEfaUCxRP4pQ",
+    "name": "P - 007",
+    "type": "IfcOpeningElement",
+    "storey": "Segundo piso"
+  },
+  {
+    "guid": "2Chl6w1tZesX3zUXo7A22f",
+    "name": "V - 001",
+    "type": "IfcOpeningElement",
+    "storey": "Segundo piso"
+  },
+  {
+    "guid": "0yVLnKlXYyvleDiQk028jx",
+    "name": "V - 002",
+    "type": "IfcOpeningElement",
+    "storey": "Nivel ático"
+  },
+  {
+    "guid": "1mA8ikQBIJfOx6nbDB6vyZ",
+    "name": "V - 003",
+    "type": "IfcOpeningElement",
+    "storey": "Nivel ático"
+  },
+  {
+    "guid": "0pXQFfWa92M0bJE3UcJTgt",
+    "name": "V - 002",
+    "type": "IfcOpeningElement",
+    "storey": "Nivel ático"
+  },
+  {
+    "guid": "2FXzyJWJN_qexyUEGPEiO3",
+    "name": "V - 003",
+    "type": "IfcOpeningElement",
+    "storey": "Nivel ático"
+  },
+  {
+    "guid": "27I9pr1CuZjwYreQlS2PBr",
+    "name": "V - 003",
+    "type": "IfcOpeningElement",
+    "storey": "Nivel ático"
+  },
+  {
+    "guid": "2U$06Wy7b0JvQjvzANKQF_",
+    "name": "FU - 001",
+    "type": "IfcFurnishingElement",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "0VEh$SKxz7oATU97BbH63Q",
+    "name": "FU - 001",
+    "type": "IfcFurnishingElement",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "1rR3Bvuw1CNxwo2ZmpgxcI",
+    "name": "FU - 001",
+    "type": "IfcFurnishingElement",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "3$Jpf23Ib1WfOFd01LVZMm",
+    "name": "FU - 001",
+    "type": "IfcFurnishingElement",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "2GcF14MXDEKQ89uW_ojZMB",
+    "name": "FU - 001",
+    "type": "IfcFurnishingElement",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "251E9u16jCahT7TS394AbX",
+    "name": "FU - 001",
+    "type": "IfcFurnishingElement",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "1Zcf8F8$j6Mg3CK7kiJX8w",
+    "name": "FU - 002",
+    "type": "IfcFurnishingElement",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "39wDUAH2H9k8TN_UJcCa8Q",
+    "name": "FU - 002",
+    "type": "IfcFurnishingElement",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "2J_HgGPy15hOGAytEKe6oK",
+    "name": "FU - 004",
+    "type": "IfcFurnishingElement",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "0L_qAfHor8zuG14XRkIWjC",
+    "name": "FU - 005",
+    "type": "IfcFurnishingElement",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "06_I1Ggx15thmYntQQvX1X",
+    "name": "FU - 005",
+    "type": "IfcFurnishingElement",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "0PIj7hFYn2RRetaYXczKWW",
+    "name": "FU - 005",
+    "type": "IfcFurnishingElement",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "2_Shj5gGn01eGochz7SnMg",
+    "name": "FU - 005",
+    "type": "IfcFurnishingElement",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "1$WtRSth52NRyMoaGX9ekY",
+    "name": "FU - 005",
+    "type": "IfcFurnishingElement",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "0VZhNgNX54CO2G3Mx9xzIQ",
+    "name": "FU - 005",
+    "type": "IfcFurnishingElement",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "23jXWzEa57_w1fn6EHdLKY",
+    "name": "FU - 006",
+    "type": "IfcFurnishingElement",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "1GvpBacdHF2uWX_apaXiDo",
+    "name": "FU - 006",
+    "type": "IfcFurnishingElement",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "3rJqX1zrf4FxqjXVv4uvW8",
+    "name": "FU - 007",
+    "type": "IfcFurnishingElement",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "3yiUhQwRDASfCdetqg_Zz7",
+    "name": "FU - 014",
+    "type": "IfcFurnishingElement",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "2V6a4rQfv99R2sDUibTrCS",
+    "name": "FU - 014",
+    "type": "IfcFurnishingElement",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "1khBKBwQX2RQJX2S7owfq6",
+    "name": "FU - 015",
+    "type": "IfcFurnishingElement",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "0GI06t9az4kuVRinjaBxAb",
+    "name": "FU - 015",
+    "type": "IfcFurnishingElement",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "2w$IvziwTDQ9h1ce2bGS5O",
+    "name": "FU - 015",
+    "type": "IfcFurnishingElement",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "3enQRjaxv0P8omlHurVxc7",
+    "name": "FU - 014",
+    "type": "IfcFurnishingElement",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "3TYxo9J$9FgB8xcY4CKLPA",
+    "name": "FU - 016",
+    "type": "IfcFurnishingElement",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "3BkEMemHf0eRlpK49PIoL2",
+    "name": "FU - 019",
+    "type": "IfcFurnishingElement",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "0mWsWIohL3yuN4OYG$Iij0",
+    "name": "FU - 022",
+    "type": "IfcFurnishingElement",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "3PjDz9nF16cwKcky0$ZzEp",
+    "name": "FU - 022",
+    "type": "IfcFurnishingElement",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "3G$Zf2lgX9gegPpGOKh6SH",
+    "name": "FU - 022",
+    "type": "IfcFurnishingElement",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "3R75ctYzPCLPudQj0BeGW4",
+    "name": "FU - 024",
+    "type": "IfcFurnishingElement",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "243TXxxwr5fhXi8P847ZU$",
+    "name": "FU - 024",
+    "type": "IfcFurnishingElement",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "1ceVW27G9Dog$SXI_8ozjA",
+    "name": "FU - 024",
+    "type": "IfcFurnishingElement",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "1NOQcWcED6bvfG3tDBY1lu",
+    "name": "FU - 024",
+    "type": "IfcFurnishingElement",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "03CgQAay50NghbIXbMVrbP",
+    "name": "FU - 024",
+    "type": "IfcFurnishingElement",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "1Mndgmx7vBzBbMWw78uD6b",
+    "name": "FU - 014",
+    "type": "IfcFurnishingElement",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "2Ivpk_yED7uggkHOvi_SNc",
+    "name": "FU - 014",
+    "type": "IfcFurnishingElement",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "2e0Ij6Ztf15R4DW6y4LQx6",
+    "name": "FU - 014",
+    "type": "IfcFurnishingElement",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "1cZyA$REn7wvh8yVmiwywc",
+    "name": "FU - 014",
+    "type": "IfcFurnishingElement",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "1tG8f7Q4z00eudk3YajYMV",
+    "name": "FU - 014",
+    "type": "IfcFurnishingElement",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "2jYY6PjoHDkOiFJXG_rVdP",
+    "name": "FU - 014",
+    "type": "IfcFurnishingElement",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "1hAqyVwxnFcAyk611CaaMt",
+    "name": "FU - 014",
+    "type": "IfcFurnishingElement",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "2o6urBgBPDKfTtDBO7v93D",
+    "name": "FU - 014",
+    "type": "IfcFurnishingElement",
+    "storey": "Primer piso"
+  },
+  {
+    "guid": "2NcQ7wD2X7YPE$Bp8TNJud",
+    "name": "FU - 017",
+    "type": "IfcFurnishingElement",
+    "storey": "Segundo piso"
+  },
+  {
+    "guid": "2j0k5C1lHFXhkmTSiSGF1P",
+    "name": "FU - 001",
+    "type": "IfcFurnishingElement",
+    "storey": "Segundo piso"
+  },
+  {
+    "guid": "03Yhv$pf17Of1LPWkYqJLh",
+    "name": "FU - 001",
+    "type": "IfcFurnishingElement",
+    "storey": "Segundo piso"
+  },
+  {
+    "guid": "2_xvkN1tT2KhkPXNiJmqVv",
+    "name": "FU - 002",
+    "type": "IfcFurnishingElement",
+    "storey": "Segundo piso"
+  },
+  {
+    "guid": "2Y6F4KaFj56BDoNz8hvqxP",
+    "name": "FU - 017",
+    "type": "IfcFurnishingElement",
+    "storey": "Segundo piso"
+  },
+  {
+    "guid": "1eWzl07hj0YulwrkwwvN88",
+    "name": "FU - 017",
+    "type": "IfcFurnishingElement",
+    "storey": "Segundo piso"
+  },
+  {
+    "guid": "3vIGkkKuTAzu_wF0kQ3isZ",
+    "name": "FU - 017",
+    "type": "IfcFurnishingElement",
+    "storey": "Segundo piso"
+  },
+  {
+    "guid": "29FsaIJTfCPRwtclKBu8Pe",
+    "name": "FU - 017",
+    "type": "IfcFurnishingElement",
+    "storey": "Segundo piso"
+  },
+  {
+    "guid": "0Rkq4nPpf6JBJZJmAqlG$P",
+    "name": "FU - 017",
+    "type": "IfcFurnishingElement",
+    "storey": "Segundo piso"
+  },
+  {
+    "guid": "1aSOkEpSLENuezrL7wOxcz",
+    "name": "FU - 017",
+    "type": "IfcFurnishingElement",
+    "storey": "Segundo piso"
+  },
+  {
+    "guid": "1AGpSmX7fCOutfp0VMV9Mq",
+    "name": "FU - 016",
+    "type": "IfcFurnishingElement",
+    "storey": "Segundo piso"
+  },
+  {
+    "guid": "2FD5UU5Kv7gA4mV1SAOQYc",
+    "name": "FU - 016",
+    "type": "IfcFurnishingElement",
+    "storey": "Segundo piso"
+  },
+  {
+    "guid": "1HPrg1cKPBwuldh4835okM",
+    "name": "FU - 016",
+    "type": "IfcFurnishingElement",
+    "storey": "Segundo piso"
+  },
+  {
+    "guid": "3vhbLLZej1CvZVrNVmtP7m",
+    "name": "FU - 016",
+    "type": "IfcFurnishingElement",
+    "storey": "Segundo piso"
+  },
+  {
+    "guid": "2jAcNVCSz92APKGb4pA5Ip",
+    "name": "FU - 016",
+    "type": "IfcFurnishingElement",
+    "storey": "Segundo piso"
+  },
+  {
+    "guid": "2uYH8i_Pv3hvI223itwL20",
+    "name": "FU - 016",
+    "type": "IfcFurnishingElement",
+    "storey": "Segundo piso"
+  },
+  {
+    "guid": "0o8FdJFtX0VeEYcFmsCIvh",
+    "name": "FU - 016",
+    "type": "IfcFurnishingElement",
+    "storey": "Segundo piso"
+  },
+  {
+    "guid": "3TgR8dzBHDWf_3RBWwsOGF",
+    "name": "FU - 016",
+    "type": "IfcFurnishingElement",
+    "storey": "Segundo piso"
+  },
+  {
+    "guid": "1c4g4MFWnA2eWmterV5G03",
+    "name": "FU - 001",
+    "type": "IfcFurnishingElement",
+    "storey": "Segundo piso"
+  },
+  {
+    "guid": "2qYWriPJ5FAvQzTBt_yNLU",
+    "name": "FU - 020",
+    "type": "IfcFurnishingElement",
+    "storey": "Segundo piso"
+  },
+  {
+    "guid": "3Ptr8gZbPFYRgir8kCkVVJ",
+    "name": "FU - 020",
+    "type": "IfcFurnishingElement",
+    "storey": "Segundo piso"
+  },
+  {
+    "guid": "3R_qhqpfr469p5xyJaJHeu",
+    "name": "FU - 021",
+    "type": "IfcFurnishingElement",
+    "storey": "Segundo piso"
+  },
+  {
+    "guid": "2sjLZ3UGb5v86FAmpak4qO",
+    "name": "FU - 022",
+    "type": "IfcFurnishingElement",
+    "storey": "Segundo piso"
+  },
+  {
+    "guid": "2DJ5yDs$T0vOgB6ZmPo_4k",
+    "name": "FU - 001",
+    "type": "IfcFurnishingElement",
+    "storey": "Segundo piso"
+  },
+  {
+    "guid": "00tMo7QcxqWdIGvc4sMN2A",
+    "name": "Construcción",
+    "type": "IfcBuilding"
+  },
+  {
+    "guid": "1oZ0wPs_PE8ANCPg3bIs4j",
+    "name": "Primer piso",
+    "type": "IfcBuildingStorey"
+  },
+  {
+    "guid": "2F0V3QPDDFMRTpJqxqPeZR",
+    "name": "Segundo piso",
+    "type": "IfcBuildingStorey"
+  },
+  {
+    "guid": "1h8KgrryX3rQ9jTvMK$ZEo",
+    "name": "Nivel ático",
+    "type": "IfcBuildingStorey"
+  },
+  {
+    "guid": "3y21AUC9X4yAqzLGUny16E",
+    "name": "3. Piso",
+    "type": "IfcBuildingStorey"
+  },
+  {
+    "guid": "20FpTZCqJy2vhVJYtjuIce",
+    "name": "Sitio",
+    "type": "IfcSite"
+  }
+]
